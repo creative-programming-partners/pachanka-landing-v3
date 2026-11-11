@@ -1,0 +1,60 @@
+{
+ "w": 740,
+ "h": 221,
+ "piezas": [
+  {
+   "src": "assets/img/logo/l0.png",
+   "l": 0.0,
+   "t": 0.0,
+   "w": 16.081
+  },
+  {
+   "src": "assets/img/logo/l1.png",
+   "l": 16.216,
+   "t": 19.457,
+   "w": 11.351
+  },
+  {
+   "src": "assets/img/logo/l2.png",
+   "l": 27.568,
+   "t": 14.48,
+   "w": 13.108
+  },
+  {
+   "src": "assets/img/logo/l3.png",
+   "l": 40.541,
+   "t": 14.027,
+   "w": 11.351
+  },
+  {
+   "src": "assets/img/logo/l4.png",
+   "l": 51.757,
+   "t": 18.552,
+   "w": 11.892
+  },
+  {
+   "src": "assets/img/logo/l5.png",
+   "l": 64.324,
+   "t": 9.05,
+   "w": 10.676
+  },
+  {
+   "src": "assets/img/logo/l6.png",
+   "l": 75.541,
+   "t": 0.0,
+   "w": 12.838
+  },
+  {
+   "src": "assets/img/logo/l7.png",
+   "l": 88.378,
+   "t": 19.457,
+   "w": 11.622
+  },
+  {
+   "src": "assets/img/logo/sub.png",
+   "l": 61.351,
+   "t": 85.52,
+   "w": 37.703
+  }
+ ]
+}

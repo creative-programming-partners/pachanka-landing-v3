@@ -1,0 +1,167 @@
+{
+  "meta": {
+    "name": "Restaurante oscuro editorial (referencia)",
+    "description": "Landing de restaurante de alta cocina: fondo carbón casi negro, fotografía gastronómica cálida y de bajo contraste ambiental, titulares serif dorados de alto contraste, CTA en ámbar y tarjetas oscuras. Ambiente de cena a la luz de velas.",
+    "source_references": ["Captura 1.webp (736×1075) — maqueta de landing de restaurante presentada sobre un fondo marrón degradado"],
+    "created_at": "2026-11-10"
+  },
+  "design_system": {
+    "color": {
+      "palette_type": "analogous",
+      "primary": { "hex": "#dfa159", "role": "Dorado ámbar de titulares, overlines y textos destacados" },
+      "secondary": { "hex": "#83643e", "role": "Bronce: anillos finos alrededor de fotos, separadores y bordes decorativos" },
+      "accent": { "hex": "#bd6118", "role": "Naranja quemado para énfasis de CTA: bordes de botones fantasma, flechas circulares y subrayado del enlace activo" },
+      "neutral": {
+        "scale": ["#e4dbc6", "#a29787", "#342419", "#110f0f"],
+        "usage": "#e4dbc6 es el color de texto principal sobre el fondo #110f0f (crema cálido, nunca blanco puro). #a29787 para párrafos secundarios y metadatos. #342419 para superficies elevadas y zonas en penumbra. #110f0f es el fondo de página."
+      },
+      "semantic": { "success": "#7bc48f", "warning": "#dfa159", "error": "#c8553d", "info": "#a29787" },
+      "surface": { "background": "#110f0f", "card": "#1a1716", "elevated": "#342419" },
+      "contrast_strategy": "Claro sobre oscuro en toda la página: texto crema y dorado sobre carbón casi negro; las fotos llevan degradados oscuros para que el texto siempre lea.",
+      "measurement": {
+        "k": 8,
+        "sampling": { "method": "deterministic_stratified", "max_pixels": 160000, "sampled_pixels": 160000 }
+      },
+      "measured_palette": [
+        { "hex": "#110f0f", "coverage": 0.5331, "role": "background" },
+        { "hex": "#342419", "coverage": 0.1846, "role": "unassigned" },
+        { "hex": "#623e23", "coverage": 0.1111, "role": "unassigned" },
+        { "hex": "#83643e", "coverage": 0.0713, "role": "unassigned" },
+        { "hex": "#e4dbc6", "coverage": 0.0327, "role": "text" },
+        { "hex": "#dfa159", "coverage": 0.026, "role": "unassigned" },
+        { "hex": "#bd6118", "coverage": 0.0209, "role": "accent" },
+        { "hex": "#a29787", "coverage": 0.0202, "role": "unassigned" }
+      ]
+    },
+    "typography": {
+      "type_scale": {
+        "display": { "size": "clamp(44px, 5.4vw, 80px)", "weight": "700", "line_height": "1.08", "tracking": "-0.01em" },
+        "heading_1": { "size": "clamp(34px, 3.6vw, 56px)", "weight": "700", "line_height": "1.1", "tracking": "-0.005em" },
+        "heading_2": { "size": "clamp(26px, 2.4vw, 36px)", "weight": "600", "line_height": "1.15", "tracking": "0" },
+        "heading_3": { "size": "18px", "weight": "600", "line_height": "1.3", "tracking": "0" },
+        "body": { "size": "16px", "weight": "400", "line_height": "1.65", "tracking": "0" },
+        "body_small": { "size": "14px", "weight": "400", "line_height": "1.6", "tracking": "0" },
+        "caption": { "size": "12px", "weight": "500", "line_height": "1.5", "tracking": "0.02em" },
+        "overline": { "size": "12px", "weight": "600", "line_height": "1.3", "tracking": "0.14em" }
+      },
+      "font_families": {
+        "heading": "Serif de display de alto contraste (tipo Playfair Display / DM Serif Display), en negrita y en tipo oración",
+        "body": "Sans-serif neutra de trazo fino (tipo Inter / grotesca)",
+        "mono": "ninguna"
+      },
+      "font_style_notes": "Titulares serif dorados, grandes y en negrita, frente a texto de cuerpo pequeño y discreto. Un detalle en letra caligráfica dorada en la barra de la portada. Overlines muy pequeñas en dorado."
+    },
+    "spacing": {
+      "base_unit": "8px",
+      "scale": ["4px", "8px", "16px", "24px", "32px", "48px", "64px", "96px", "128px"],
+      "content_density": "spacious",
+      "section_rhythm": "Secciones altas con 96–140px de aire vertical; cada sección es un bloque de color de fondo apenas distinto."
+    },
+    "layout": {
+      "grid_system": "12 columnas con contenedor centrado",
+      "max_content_width": "1200px",
+      "columns": "Portada a ancho completo; secciones a 2 columnas (texto / foto) y una cuadrícula de 4 tarjetas",
+      "gutter": "24px",
+      "breakpoints": ["560px", "900px", "1180px"],
+      "alignment_tendency": "mixed"
+    },
+    "shape": {
+      "border_radius": { "small": "4px", "medium": "8px", "large": "200px (marco de foto en arco/estadio)", "pill": "999px" },
+      "border_usage": "subtle 1px: anillos dorados finos alrededor de fotos y bordes naranjas en botones fantasma y flechas",
+      "divider_style": "Línea vertical fina de 1px en crema al 30% dentro de la barra de la portada"
+    },
+    "elevation": {
+      "shadow_style": "soft diffused",
+      "levels": { "low": "0 4px 14px rgba(0,0,0,.35)", "medium": "0 14px 36px rgba(0,0,0,.45)", "high": "0 30px 80px rgba(0,0,0,.6)" },
+      "depth_cues": "overlapping layers: la foto del plato se sale de su marco y un anillo dorado desplazado detrás crea profundidad; brillo cálido de velas desenfocadas"
+    },
+    "iconography": { "style": "Flechas lineales simples dentro de círculos", "stroke_weight": "1.5px", "size_scale": ["16px", "20px", "24px"], "preferred_set": "Lucide (chevron-left / chevron-right)" },
+    "motion": {
+      "easing": "cubic-bezier(.23,1,.32,1)",
+      "duration_scale": { "micro": "180ms", "normal": "400ms", "macro": "1100ms" },
+      "entrance_pattern": "Aparición suave con desplazamiento hacia arriba al entrar en pantalla",
+      "exit_pattern": "Fundido",
+      "philosophy": "cinematic"
+    },
+    "components": {
+      "button_style": "Píldora rellena en ámbar con texto oscuro para el CTA principal; píldora fantasma con borde naranja de 1px para el secundario; botón oscuro con borde fino en la cabecera",
+      "input_style": "No visible en la referencia; se infiere línea inferior fina en crema y foco en dorado",
+      "card_style": "Tarjeta oscura (#1a1716) sin borde, foto arriba con esquinas casi rectas, título en dorado, subtítulo en naranja y texto gris cálido",
+      "navigation_pattern": "Cabecera horizontal: logo a la izquierda, enlaces centrados con subrayado naranja en el activo, botón a la derecha",
+      "modal_style": "No visible",
+      "list_style": "Sin listas visibles; contenido en tarjetas",
+      "component_notes": "Portada con flechas circulares de borde naranja a los lados de una barra translúcida (estilo carrusel). Botón circular de flecha flotando sobre la foto en arco."
+    }
+  },
+  "design_style": {
+    "aesthetic": {
+      "mood": ["íntimo", "cálido", "sofisticado", "cinematográfico", "apetitoso"],
+      "visual_metaphor": "Cena a la luz de las velas en un salón oscuro",
+      "era_influence": "Lujo gastronómico contemporáneo con tipografía editorial clásica",
+      "genre": "luxury editorial",
+      "personality_traits": ["seguro", "elegante", "acogedor"],
+      "adjectives": ["oscuro", "dorado", "cálido", "premium", "fotográfico"]
+    },
+    "visual_language": {
+      "complexity": "moderate",
+      "ornamentation": "subtle accents",
+      "whitespace_usage": "Generoso: el negro funciona como espacio en blanco y deja respirar a la comida",
+      "visual_weight_distribution": "Peso en la fotografía de los platos; el texto queda a un lado",
+      "focal_strategy": "single hero element",
+      "contrast_level": "Alto entre texto y fondo, bajo dentro de la paleta (todo en ámbar y marrón)",
+      "texture_usage": "Sin texturas gráficas; la textura viene de las fotos (bokeh, mesa de piedra)"
+    },
+    "composition": {
+      "hierarchy_method": "scale contrast",
+      "balance_type": "asymmetric",
+      "flow_direction": "Zigzag: texto a la izquierda y foto a la derecha, luego cuadrícula centrada",
+      "grouping_strategy": "Bloques por sección con fondos casi iguales separados por un cambio leve de tono",
+      "negative_space_role": "Crear intimidad y lujo alrededor del plato"
+    },
+    "imagery": {
+      "photo_treatment": "Fotografía gastronómica cálida, fondos oscuros desenfocados, luz lateral de velas, alta saturación en los alimentos",
+      "illustration_style": "ninguna",
+      "graphic_elements": "Anillo dorado fino desplazado detrás de la foto; flechas en círculos",
+      "pattern_usage": "ninguno",
+      "image_shape": "Portada a sangre; foto en arco/estadio con esquinas muy redondeadas; tarjetas rectangulares"
+    },
+    "interaction_feel": {
+      "feedback_style": "Cambios de color suaves",
+      "hover_behavior": "Botones que se rellenan; fotos que se acercan levemente",
+      "transition_personality": "smooth glide",
+      "loading_style": "Fundido de entrada",
+      "microinteraction_density": "Baja"
+    },
+    "brand_voice_in_ui": {
+      "tone": "Hospitalario y aspiracional",
+      "formality": "Semiformal",
+      "cta_style": "friendly invitation",
+      "empty_state_approach": "No visible",
+      "error_tone": "No visible"
+    }
+  },
+  "visual_effects": {
+    "overview": { "effect_intensity": "subtle-accent", "performance_tier": "lightweight", "fallback_strategy": "reduce to CSS", "primary_technology": "CSS only" },
+    "background_effects": {
+      "type": "none",
+      "description": "Brillo cálido de velas desenfocadas en la esquina superior derecha de la portada (viene de la foto)",
+      "technology": "Fotografía + degradado radial",
+      "params": { "color_palette": ["#dfa159", "#bd6118"], "speed": "estático", "density": "baja", "opacity": "0.35", "blend_mode": "screen" }
+    },
+    "particle_systems": { "enabled": false, "type": "custom", "description": "No hay partículas", "technology": "ninguna", "params": { "count": "0", "shape": "n/a", "size_range": "n/a", "movement_pattern": "n/a", "color_behavior": "n/a", "interaction": "none", "spawn_area": "n/a" } },
+    "3d_elements": { "enabled": false, "type": "hero-model", "description": "No hay 3D", "technology": "ninguna", "params": { "renderer": "n/a", "lighting": "n/a", "camera": "n/a", "materials": "n/a", "geometry": "n/a", "post_processing": [], "interaction_model": "n/a" } },
+    "shader_effects": { "enabled": false, "type": "custom-GLSL", "description": "No hay shaders", "technology": "ninguna", "params": { "uniforms": "n/a", "vertex_manipulation": "n/a", "fragment_output": "n/a", "noise_type": "n/a", "distortion": "n/a" } },
+    "scroll_effects": {
+      "parallax": { "enabled": false, "layers": "1", "depth_range": "n/a", "speed_curve": "n/a" },
+      "scroll_triggered_animations": { "enabled": true, "trigger_points": "Al entrar cada sección (inferido)", "animation_type": "fade-up", "scrub_behavior": "triggered" },
+      "scroll_morphing": { "enabled": false, "description": "No observado" }
+    },
+    "text_effects": { "type": "none", "description": "Titulares estáticos", "technology": "CSS", "params": { "split_strategy": "by-line", "animation_per_unit": "n/a", "stagger": "n/a", "effect_style": "n/a" } },
+    "cursor_effects": { "enabled": false, "type": "none", "description": "Cursor normal", "params": { "shape": "n/a", "size": "n/a", "blend_mode": "n/a", "trail": "n/a", "interaction_zone": "n/a" } },
+    "image_effects": { "type": "none", "description": "La portada es un carrusel (flechas a los lados); las fotos no tienen efectos especiales", "technology": "CSS", "params": { "filter_pipeline": "ninguno", "hover_transform": "scale(1.04)", "reveal_animation": "fade", "distortion_type": "n/a" } },
+    "glassmorphism_neumorphism": { "enabled": true, "style": "glass", "params": { "blur_radius": "12px", "transparency": "0.55", "border_treatment": "ninguno", "shadow_type": "ninguna", "light_source_angle": "n/a" } },
+    "canvas_drawings": { "enabled": false, "type": "none", "description": "No hay canvas", "technology": "ninguna", "params": { "draw_method": "n/a", "animation_loop": "n/a", "color_scheme": "n/a", "responsiveness": "n/a", "interaction": "n/a" } },
+    "svg_animations": { "enabled": false, "type": "none", "description": "No hay animaciones SVG", "params": { "animation_method": "n/a", "path_morphing": "n/a", "stroke_animation": "n/a", "filter_effects": "n/a" } },
+    "composite_notes": "La captura es una maqueta presentada sobre un fondo marrón degradado: los marrones #623e23 y #83643e salen en parte de ese marco de presentación y no del sitio. Los textos de la maqueta son de relleno. La barra de la portada es translúcida (vidrio oscuro) sobre la foto. Todo el efecto 'premium' viene de la fotografía cálida, el negro dominante y el dorado; no hay efectos pesados."
+  }
+}

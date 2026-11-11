@@ -1,0 +1,99 @@
+{
+  "meta": {
+    "name": "Pachanka — fiesta criolla de noche",
+    "description": "El ADN de la referencia (salón oscuro, dorado, fotos cálidas, marcos en arco, portada en carrusel) vestido con la identidad de Pachanka: su logo de ocho letras de colores, las etiquetas en pincelada con letra Chewy de su carta, sus fotos y su tono de fiesta criolla.",
+    "source_references": ["design-dna/referencia.json", "Marca Pachanka: assets/img/logo-oscuro.png, letrero del local, carta impresa (kraft y pincelada amarilla)"],
+    "created_at": "2026-11-10"
+  },
+  "brand_adaptation": {
+    "se_toma_de_la_referencia": ["Fondo carbón #110f0f en toda la página", "Texto crema #e4dbc6 y gris cálido #a29787", "Titulares serif dorados #dfa159", "Naranja #bd6118 en bordes, flechas y subrayados", "Bronce #83643e en anillos finos", "Portada a sangre en carrusel con barra translúcida y flechas circulares", "Fotos en marco de arco con anillo desplazado", "Tarjetas oscuras con foto arriba", "Navegación horizontal con subrayado en el enlace activo"],
+    "se_conserva_de_pachanka": ["Logotipo de ocho letras de colores (cabecera, carga y pie)", "Etiqueta en pincelada con Chewy, ahora rellena en el dorado de la referencia", "Las ocho letras del logo como acentos: puntos de la portada, línea de tiempo del día, avatares de reseñas, barras de calificación y tarjetas de eventos", "Carbón #1E1A17 de su carta de piqueos como superficie de tarjetas", "Textura de grano del papel kraft, muy suave", "Fotos, carta, textos, reservas por WhatsApp, español/inglés"],
+    "decisiones": ["El dorado de la referencia (#dfa159) casi coincide con el ocre de la primera letra del logo (#D4A25F): por eso es el color de titulares y CTA", "El naranja #bd6118 no llega a 4.5:1 en texto pequeño, así que solo va en bordes, flechas, subrayados y elementos grandes", "Fraunces en lugar de una serif rígida: mantiene el alto contraste de la referencia pero con terminaciones suaves que conversan con las letras redondeadas del logo"]
+  },
+  "design_system": {
+    "color": {
+      "palette_type": "analogous",
+      "primary": { "hex": "#dfa159", "role": "Titulares, CTA relleno, precios y pinceladas" },
+      "secondary": { "hex": "#83643e", "role": "Anillos de los marcos en arco y separadores decorativos" },
+      "accent": { "hex": "#bd6118", "role": "Bordes de botones fantasma, flechas circulares, subrayado del enlace activo" },
+      "neutral": {
+        "scale": ["#e4dbc6", "#a29787", "#342419", "#110f0f"],
+        "usage": "#e4dbc6 texto principal sobre #110f0f; #a29787 texto secundario; #342419 superficies elevadas; #110f0f fondo."
+      },
+      "brand_accents": { "ochre": "#D4A25F", "sage": "#8BAE98", "blush": "#E6B3A2", "coral": "#E0766B", "butter": "#EDC77F", "teal": "#5B8793", "brick": "#B05E5A", "sand": "#C6A882" },
+      "semantic": { "success": "#7BC48F", "warning": "#EDC77F", "error": "#E0766B", "info": "#5B8793" },
+      "surface": { "background": "#110f0f", "card": "#1E1A17", "elevated": "#2A2420" },
+      "contrast_strategy": "Claro sobre oscuro; los colores del logo solo en puntos, barras y avatares, nunca en texto pequeño.",
+      "measurement": {
+        "k": 8,
+        "sampling": { "method": "deterministic_stratified", "max_pixels": 160000, "sampled_pixels": 160000 }
+      },
+      "measured_palette": [
+        { "hex": "#110f0f", "coverage": 0.5331, "role": "background" },
+        { "hex": "#342419", "coverage": 0.1846, "role": "unassigned" },
+        { "hex": "#623e23", "coverage": 0.1111, "role": "unassigned" },
+        { "hex": "#83643e", "coverage": 0.0713, "role": "unassigned" },
+        { "hex": "#e4dbc6", "coverage": 0.0327, "role": "text" },
+        { "hex": "#dfa159", "coverage": 0.026, "role": "unassigned" },
+        { "hex": "#bd6118", "coverage": 0.0209, "role": "accent" },
+        { "hex": "#a29787", "coverage": 0.0202, "role": "unassigned" }
+      ]
+    },
+    "typography": {
+      "type_scale": {
+        "display": { "size": "clamp(46px, 6vw, 92px)", "weight": "600", "line_height": "1.02", "tracking": "-0.02em" },
+        "heading_1": { "size": "clamp(36px, 3.8vw, 58px)", "weight": "600", "line_height": "1.06", "tracking": "-0.015em" },
+        "heading_2": { "size": "clamp(26px, 2.4vw, 36px)", "weight": "500", "line_height": "1.12", "tracking": "-0.01em" },
+        "heading_3": { "size": "19px", "weight": "600", "line_height": "1.3", "tracking": "0" },
+        "body": { "size": "16px", "weight": "400", "line_height": "1.65", "tracking": "0" },
+        "body_small": { "size": "14px", "weight": "400", "line_height": "1.6", "tracking": "0" },
+        "caption": { "size": "12px", "weight": "500", "line_height": "1.5", "tracking": "0.04em" },
+        "overline": { "size": "12px", "weight": "600", "line_height": "1.3", "tracking": "0.18em" }
+      },
+      "font_families": { "heading": "Fraunces (SOFT 50)", "body": "Hanken Grotesk", "mono": "ninguna", "brand_mark": "Chewy (etiquetas en pincelada y detalle caligráfico de la portada)" },
+      "font_style_notes": "Serif de alto contraste con curvas suaves para titulares dorados; grotesca para cuerpo; Chewy como la letra de mano de la marca."
+    },
+    "spacing": { "base_unit": "8px", "scale": ["4px", "8px", "16px", "24px", "32px", "48px", "64px", "96px", "136px"], "content_density": "spacious", "section_rhythm": "96–140px por sección, fondos alternos #110f0f / #161312" },
+    "layout": { "grid_system": "Contenedor centrado de 1240px", "max_content_width": "1240px", "columns": "Portada a sangre; secciones texto / foto en arco; 4 tarjetas en eventos", "gutter": "24px", "breakpoints": ["560px", "900px", "1180px"], "alignment_tendency": "mixed" },
+    "shape": { "border_radius": { "small": "6px", "medium": "14px", "large": "arco: 50% 50% 22px 22px / 36% 36% 22px 22px", "pill": "999px" }, "border_usage": "subtle 1px", "divider_style": "1px crema al 12%" },
+    "elevation": { "shadow_style": "soft diffused", "levels": { "low": "0 6px 18px rgba(0,0,0,.35)", "medium": "0 18px 44px rgba(0,0,0,.45)", "high": "0 40px 90px rgba(0,0,0,.6)" }, "depth_cues": "Anillo bronce desplazado detrás de cada foto en arco; brillo de velas en la portada" },
+    "iconography": { "style": "Flechas lineales en círculos", "stroke_weight": "1.8px", "size_scale": ["16px", "20px", "24px"], "preferred_set": "SVG propios (chevrons)" },
+    "motion": { "easing": "cubic-bezier(.23,1,.32,1)", "duration_scale": { "micro": "200ms", "normal": "450ms", "macro": "1200ms" }, "entrance_pattern": "fade-up y cortina que se retira de las fotos", "exit_pattern": "fundido", "philosophy": "cinematic" },
+    "components": {
+      "button_style": "CTA píldora dorada con texto carbón; secundario fantasma con borde naranja; cabecera con píldora de borde dorado",
+      "input_style": "Línea inferior crema al 30%, foco dorado",
+      "card_style": "Superficie #1E1A17, foto arriba con radio 6px, título serif dorado, subtítulo en mayúsculas pequeñas, texto #a29787",
+      "navigation_pattern": "Logo a la izquierda, enlaces centrados con subrayado naranja en el activo, estado + idioma + reserva a la derecha; menú lateral en celular",
+      "modal_style": "Paneles laterales oscuros (carta completa) y video expandido sobre fondo difuminado",
+      "list_style": "Platos con línea divisoria fina, nombre en crema y precio en dorado",
+      "component_notes": "La portada es un carrusel de tres fotos con barra translúcida: flechas circulares, estado de apertura en vivo y aviso de la música en vivo."
+    }
+  },
+  "design_style": {
+    "aesthetic": { "mood": ["cálido", "festivo", "nocturno", "apetitoso", "cercano"], "visual_metaphor": "La barra de Pachanka a las 9 de la noche, con las luces bajas y la mesa llena", "era_influence": "Restaurante contemporáneo con letrero de colores", "genre": "luxury editorial con alma de picantería festiva", "personality_traits": ["alegre", "acogedor", "seguro"], "adjectives": ["oscuro", "dorado", "colorido en detalles", "criollo"] },
+    "visual_language": { "complexity": "moderate", "ornamentation": "subtle accents", "whitespace_usage": "Generoso", "visual_weight_distribution": "Fotos de los platos al frente, texto al lado", "focal_strategy": "single hero element", "contrast_level": "Alto", "texture_usage": "Grano suave de papel kraft sobre el carbón" },
+    "composition": { "hierarchy_method": "scale contrast", "balance_type": "asymmetric", "flow_direction": "Zigzag texto / foto", "grouping_strategy": "Bloques por sección con fondos alternos", "negative_space_role": "Dejar respirar a la comida" },
+    "imagery": { "photo_treatment": "Fotos del restaurante con degradado oscuro cálido", "illustration_style": "ninguna", "graphic_elements": "Pinceladas doradas, puntos de colores del logo, anillos bronce", "pattern_usage": "ninguno", "image_shape": "Portada a sangre, arcos, tarjetas" },
+    "interaction_feel": { "feedback_style": "Relleno suave de botones", "hover_behavior": "Botones que se rellenan, fotos que se acercan", "transition_personality": "smooth glide", "loading_style": "El logo entra letra por letra", "microinteraction_density": "Media" },
+    "brand_voice_in_ui": { "tone": "Cercano y festivo, peruano", "formality": "Informal respetuoso (tuteo)", "cta_style": "friendly invitation", "empty_state_approach": "n/a", "error_tone": "Claro y amable" }
+  },
+  "visual_effects": {
+    "overview": { "effect_intensity": "subtle-accent", "performance_tier": "lightweight", "fallback_strategy": "reduce to CSS", "primary_technology": "GSAP" },
+    "background_effects": { "type": "gradient-animation", "description": "Brillo de velas en la portada: dos degradados radiales ámbar que titilan muy lento", "technology": "CSS", "params": { "color_palette": ["#dfa159", "#bd6118"], "speed": "6s", "density": "baja", "opacity": "0.5", "blend_mode": "screen" } },
+    "particle_systems": { "enabled": false, "type": "custom", "description": "No", "technology": "ninguna", "params": { "count": "0", "shape": "n/a", "size_range": "n/a", "movement_pattern": "n/a", "color_behavior": "n/a", "interaction": "none", "spawn_area": "n/a" } },
+    "3d_elements": { "enabled": false, "type": "hero-model", "description": "No", "technology": "ninguna", "params": { "renderer": "n/a", "lighting": "n/a", "camera": "n/a", "materials": "n/a", "geometry": "n/a", "post_processing": [], "interaction_model": "n/a" } },
+    "shader_effects": { "enabled": false, "type": "custom-GLSL", "description": "No", "technology": "ninguna", "params": { "uniforms": "n/a", "vertex_manipulation": "n/a", "fragment_output": "n/a", "noise_type": "n/a", "distortion": "n/a" } },
+    "scroll_effects": {
+      "parallax": { "enabled": true, "layers": "2", "depth_range": "8–12%", "speed_curve": "lineal (scrub)" },
+      "scroll_triggered_animations": { "enabled": true, "trigger_points": "Al entrar cada bloque", "animation_type": "fade-up", "scrub_behavior": "triggered" },
+      "scroll_morphing": { "enabled": true, "description": "Un día en Pachanka se fija y avanza por cuatro horas del día" }
+    },
+    "text_effects": { "type": "split-letter-animate", "description": "El titular de la portada sube línea por línea tras la carga", "technology": "CSS", "params": { "split_strategy": "by-line", "animation_per_unit": "translateY 105% → 0", "stagger": "120ms", "effect_style": "máscara" } },
+    "cursor_effects": { "enabled": false, "type": "none", "description": "Cursor normal", "params": { "shape": "n/a", "size": "n/a", "blend_mode": "n/a", "trail": "n/a", "interaction_zone": "n/a" } },
+    "image_effects": { "type": "reveal-clip", "description": "Carrusel con fundido y acercamiento lento en la portada; cortina que se retira de las fotos en arco", "technology": "CSS + GSAP", "params": { "filter_pipeline": "ninguno", "hover_transform": "scale(1.05)", "reveal_animation": "clip / scaleX", "distortion_type": "n/a" } },
+    "glassmorphism_neumorphism": { "enabled": true, "style": "glass", "params": { "blur_radius": "14px", "transparency": "0.5", "border_treatment": "1px crema al 10%", "shadow_type": "ninguna", "light_source_angle": "n/a" } },
+    "canvas_drawings": { "enabled": false, "type": "none", "description": "No", "technology": "ninguna", "params": { "draw_method": "n/a", "animation_loop": "n/a", "color_scheme": "n/a", "responsiveness": "n/a", "interaction": "n/a" } },
+    "svg_animations": { "enabled": false, "type": "none", "description": "No", "params": { "animation_method": "n/a", "path_morphing": "n/a", "stroke_animation": "n/a", "filter_effects": "n/a" } },
+    "composite_notes": "Con movimiento reducido se apagan el carrusel automático, el titileo, el parallax y la sección fija (queda como lista)."
+  }
+}

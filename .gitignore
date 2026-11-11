@@ -1,0 +1,10 @@
+Thumbs.db
+desktop.ini
+.DS_Store
+
+.claude/
+
+# Archivos de trabajo: no se publican
+Pachanka-v2-design-dna.zip
+_pruebas/
+LEEME.txt
