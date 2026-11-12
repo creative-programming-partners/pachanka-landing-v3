@@ -300,7 +300,7 @@
     if (animate && ink.isConnected && ink.parentNode !== btn) {
       const state = Flip.getState(ink);
       btn.appendChild(ink);
-      Flip.from(state, { duration: .5, ease: window.CustomEase ? 'pk-io' : 'power3.inOut', scale: true });
+      Flip.from(state, { duration: .3, ease: window.CustomEase ? 'pk-out' : 'expo.out', scale: true });
     } else btn.appendChild(ink);
   }
 
@@ -364,7 +364,7 @@
     const showS = i => {
       si = (i + slides.length) % slides.length;
       slides.forEach((s, k) => s.classList.toggle('is-on', k === si));
-      if (heroNum) heroNum.textContent = String(si + 1).padStart(2, '0');
+      if (heroNum) heroNum.textContent = String(si + 1);
     };
     const sStop = () => { clearInterval(sTimer); sTimer = null; };
     const sPlay = () => { sStop(); if (!reduce && heroOn) sTimer = setInterval(() => showS(si + 1), 7000); };
@@ -648,38 +648,18 @@
       gsap.ticker.lagSmoothing(0);
     }
 
-    // Curvas de la marca: las mismas del CSS (--ease-out, --ease-io) y una para la pincelada,
-    // que arranca lenta, corre y frena al final como un trazo de pincel
+    // Una sola curva, la misma del CSS (--ease-out). La pincelada tiene la suya: arranca lenta,
+    // corre y frena al final como un trazo de pincel
     if (hasEase) {
-      CustomEase.create('pk-out', '.23,1,.32,1');
-      CustomEase.create('pk-io', '.77,0,.175,1');
+      CustomEase.create('pk-out', '.22,1,.36,1');
       CustomEase.create('pk-paint', 'M0,0 C.3,0 .18,1 1,1');
     }
-    const E = hasEase ? { out: 'pk-out', io: 'pk-io', paint: 'pk-paint' } : { out: 'expo.out', io: 'power3.inOut', paint: 'power2.inOut' };
+    const E = hasEase ? { out: 'pk-out', paint: 'pk-paint' } : { out: 'expo.out', paint: 'power2.inOut' };
 
     // Las animaciones de abajo reemplazan el revelado CSS (.rv) de sus elementos
     const takeOver = el => { el.classList.remove('rv'); io.unobserve(el); };
 
-    /* --- Portada: la foto baja más lento que la página y el texto se aleja --- */
-    gsap.to('.hs', { yPercent: 8, ease: 'none', force3D: true,
-      scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } });
-    // fromTo sin render inmediato: la barra y el texto tienen su propia entrada con CSS tras la carga
-    const heroFade = () => ({ yPercent: -16, opacity: 0, ease: 'none', force3D: true, immediateRender: false,
-      scrollTrigger: { trigger: '.hero', start: 'top top', end: '80% top', scrub: true } });
-    gsap.fromTo('.hero-copy', { yPercent: 0, opacity: 1 }, heroFade());
-    // La barra entra con una transición CSS de opacidad y transform (con 1.35 s de retraso). Si GSAP la mueve
-    // mientras esa transición sigue puesta, cada cuadro del scroll espera ese retraso y la barra va atrasada.
-    // Se engancha al scroll cuando termina la entrada, y la transición se quita (.is-in).
-    const heroBar = $('.hero-bar');
-    const hookBar = () => {
-      if (heroBar.classList.contains('is-in')) return;
-      heroBar.classList.add('is-in');
-      gsap.fromTo(heroBar, { yPercent: 0, opacity: 1 }, heroFade());
-    };
-    const onBarEnd = e => { if (e.target === heroBar && e.propertyName === 'transform') hookBar(); };
-    heroBar.addEventListener('transitionend', onBarEnd);
-    heroBar.addEventListener('transitioncancel', onBarEnd);
-    setTimeout(hookBar, 8000); // por si el navegador no avisa del final de la transición
+    // La portada queda quieta al hacer scroll: sin parallax de la foto ni texto que se aleja
 
     /* --- Un día en Pachanka: en escritorio la sección se fija y cada tramo de scroll es una hora --- */
     // Va antes que todo lo de abajo: su espacio fijo empuja la página 3 pantallas, y ScrollTrigger
@@ -702,7 +682,7 @@
     });
 
     /* --- Cabecera: se esconde al bajar y vuelve al subir; arriba, una línea marca el avance --- */
-    const hdrAnim = gsap.to(hdr, { yPercent: -102, duration: .45, ease: E.io, paused: true });
+    const hdrAnim = gsap.to(hdr, { yPercent: -102, duration: .3, ease: E.out, paused: true });
     ScrollTrigger.create({
       start: 0, end: 'max',
       onUpdate: self => {
@@ -717,19 +697,7 @@
     document.body.appendChild(prog);
     gsap.to(prog, { scaleX: 1, ease: 'none', scrollTrigger: { start: 0, end: 'max', scrub: .3 } });
 
-    /* --- Paneles: la foto en arco se acerca y se asienta; adentro, la imagen va más lenta (profundidad) --- */
-    // El disparador es el panel y no la foto: así lo que se mueve no altera los puntos de inicio
-    $$('.split-media').forEach(media => {
-      const panel = media.closest('.split');
-      gsap.fromTo(media, { scale: .88, yPercent: 7 }, { scale: 1, yPercent: 0, ease: 'none', force3D: true,
-        scrollTrigger: { trigger: panel, start: 'top bottom', end: 'center 55%', scrub: true } });
-      const img = $('[data-parallax]', media);
-      if (img) {
-        const a = +img.dataset.parallax;
-        gsap.fromTo(img, { yPercent: -a }, { yPercent: a, ease: 'none', force3D: true,
-          scrollTrigger: { trigger: panel, start: 'top bottom', end: 'bottom top', scrub: true } });
-      }
-    });
+    // Las fotos de los paneles quedan quietas: solo la cortina CSS que se retira al entrar
 
     /* --- Cinta de videos: corre sola, se acelera con el scroll (y va hacia atrás si subes) --- */
     // Frena suave al pasar el mouse; se detiene del todo fuera de pantalla o con el video grande abierto
@@ -764,7 +732,7 @@
     /* --- Reseñas: la nota y el número de reseñas cuentan desde cero al aparecer --- */
     const rNum = $('.rating-num'), rCount = $('.rating-count b');
     if (rNum) {
-      const fmt = v => { const s = v.toFixed(1); return lang === 'en' ? s : s.replace('.', ','); };
+      const fmt = v => v.toFixed(1);   // punto decimal en los dos idiomas, igual que los precios (S/ 39.00)
       const goal = { v: parseFloat(rNum.textContent.replace(',', '.')) || 0, n: rCount ? parseInt(rCount.textContent, 10) || 0 : 0 };
       const o = { v: 0, n: 0 };
       const paintNum = () => { rNum.textContent = fmt(o.v); if (rCount) rCount.textContent = Math.round(o.n); };
@@ -777,20 +745,20 @@
     const cards = $$('.ev-card');
     if (cards.length) {
       cards.forEach(takeOver);
-      gsap.set(cards, { opacity: 0, y: 80, rotation: i => [-2.5, 1.5, -1.5, 2.5][i % 4] });
+      gsap.set(cards, { opacity: 0, y: 24 });
       ScrollTrigger.batch(cards, {
         start: 'top 90%', once: true,
         onEnter: batch => {
           // Su transición CSS de hover (transform) frenaría cada cuadro de la entrada: se apaga mientras dura
           batch.forEach(c => { c.style.transition = 'none'; });
-          gsap.to(batch, { opacity: 1, y: 0, rotation: 0, duration: 1.1, ease: E.out, stagger: .12, overwrite: true,
+          gsap.to(batch, { opacity: 1, y: 0, duration: .6, ease: E.out, stagger: .06, overwrite: true,
             clearProps: 'opacity,transform', onComplete: () => batch.forEach(c => { c.style.transition = ''; }) });
         }
       });
     }
 
     /* --- Pie: las columnas suben en cascada --- */
-    gsap.from('.ftr-grid > *', { y: 40, opacity: 0, duration: 1, ease: E.out, stagger: .1,
+    gsap.from('.ftr-grid > *', { y: 12, opacity: 0, duration: .5, ease: E.out, stagger: .05,
       scrollTrigger: { trigger: '.ftr', start: 'top 92%', once: true } });
 
     /* --- Carta completa: subrayado que se desliza entre categorías (Flip) --- */
@@ -822,8 +790,8 @@
       if (brush) {
         takeOver(brush);
         const strokes = paint(brush, false);
-        gsap.set(brush, { rotation: -5 });
-        tl.to(brush, { rotation: -1.5, duration: .9, ease: 'back.out(2.2)' }, 0);
+        gsap.set(brush, { rotation: -4 });
+        tl.to(brush, { rotation: -1.5, duration: .6, ease: E.out }, 0);
         if (strokes.length) tl.to(strokes, { drawSVG: '100%', duration: .62, ease: E.paint, stagger: { each: .07, from: 'random' } }, 0);
         tl.add(() => brush.classList.add('is-painted'), strokes.length ? .26 : 0);
       }
@@ -831,7 +799,7 @@
         h.split = SplitText.create(title, { type: 'lines', mask: 'lines', linesClass: 'tl' });
         title.classList.add('is-split');
         takeOver(title);
-        tl.from(h.split.lines, { yPercent: 115, rotation: 2.5, transformOrigin: '0% 100%', duration: 1.15, stagger: .12, ease: E.out }, brush ? .22 : 0);
+        tl.from(h.split.lines, { yPercent: 110, duration: .8, stagger: .08, ease: E.out }, brush ? .2 : 0);
       }
       h.tl = tl;
       h.st = ScrollTrigger.create({ trigger: brush || title, start: 'top 86%', once: true, onEnter: () => tl.play() });

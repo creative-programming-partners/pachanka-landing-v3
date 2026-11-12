@@ -64,7 +64,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Chewy&family=Fraunces:opsz,wght,SOFT@9..144,300..700,0..100&family=Hanken+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <script>document.documentElement.classList.add('js');if('scrollRestoration' in history)history.scrollRestoration='manual';</script>
-<link rel="stylesheet" href="css/styles.css?v=dna9">
+<link rel="stylesheet" href="css/styles.css?v=dna11">
 </head>
 <body>
 
@@ -138,7 +138,7 @@
   <div class="mp-body" id="mpBody" role="tabpanel" tabindex="-1" data-lenis-prevent></div>
   <span class="mp-more" id="mpMore" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span>
   <div class="mp-foot">
-    <span data-i18n="mp.note">*Precios en soles (S/).</span>
+    <span data-i18n="mp.note">Precios en soles (S/)</span>
     <a href="https://creative-programming-partners.github.io/pachanka-carta-digital/" target="_blank" rel="noopener" data-i18n="mp.pdf">Abrir la carta digital</a>
   </div>
 </aside>
@@ -148,17 +148,16 @@
 <section class="hero" id="inicio">
   <!-- Carrusel de portada: una foto a la vez, a la derecha, con el texto sobre el carbón -->
   <div class="hero-slides" aria-hidden="true">
-    <figure class="hs is-on" style="--pos:50% 62%"><img src="assets/img/hamburguesa.jpg" alt="" width="1000" height="1300" fetchpriority="high"></figure>
-    <figure class="hs" style="--pos:50% 55%"><img src="assets/img/ceviche-hero.jpg" alt="" width="1000" height="1300"></figure>
+    <figure class="hs is-on" style="--pos:50% 55%"><img src="assets/img/ceviche-hero.jpg" alt="" width="1000" height="1300" fetchpriority="high"></figure>
+    <figure class="hs" style="--pos:50% 62%"><img src="assets/img/hamburguesa.jpg" alt="" width="1000" height="1300"></figure>
     <figure class="hs" style="--pos:50% 50%"><img src="assets/img/alitas.jpg" alt="" width="1000" height="1300"></figure>
   </div>
   <div class="hero-shade" aria-hidden="true"></div>
-  <div class="hero-glow" aria-hidden="true"><i></i><i></i></div>
   <h1 class="sr">Pachanka Restaurant</h1>
   <div class="hero-inner">
     <div class="hero-copy">
-      <p class="hero-meta"><span class="dots" aria-hidden="true"><i style="--c:var(--ochre)"></i><i style="--c:var(--sage)"></i><i style="--c:var(--coral)"></i><i style="--c:var(--teal)"></i></span><span data-i18n="hero.meta">Criollo · Fusión — Jesús María, Lima</span></p>
-      <p class="hero-title"><span class="mask"><span data-i18n="hero.l1">Bienvenidos,</span></span><span class="mask"><span class="hl" data-i18n="hero.l2">a la fiesta criolla</span></span></p>
+      <p class="hero-meta" data-i18n="hero.meta">Criollo · Fusión · Lima</p>
+      <p class="hero-title"><span class="mask"><span data-i18n="hero.l1">La fiesta criolla</span></span><span class="mask"><span class="hl" data-i18n="hero.l2">de Jesús María</span></span></p>
       <p class="hero-lede" data-i18n="hero.lede">Cocina criolla con fusión, platos del mar y música en vivo. La mesa larga, la barra prendida y el wok que no para.</p>
       <div class="pills hero-pills">
         <a class="pill pill--accent" href="#reservar" data-i18n="cta.book">Reserva aquí</a>
@@ -173,8 +172,8 @@
       <p class="status js-status hb-status"><i class="status-dot"></i><span class="status-text"></span></p>
     </div>
     <span class="hb-sep" aria-hidden="true"></span>
-    <p class="hb-text" data-i18n="hero.music">Música criolla en vivo los viernes de quincena y de fin de mes.</p>
-    <span class="hb-count" aria-hidden="true"><b id="heroNum">01</b> / 03</span>
+    <p class="hb-text" data-i18n="hero.music">Música criolla en vivo los viernes de quincena y de fin de mes</p>
+    <span class="hb-count" aria-hidden="true"><b id="heroNum">1</b> / 3</span>
     <button class="round" type="button" id="heroNext" aria-label="Foto siguiente" data-i18n-aria="hero.next"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></button>
   </div>
 </section>
@@ -185,13 +184,13 @@
     <div class="day-left">
       <h2 class="day-kicker brush rv" data-i18n="nav.day">Un día en Pachanka</h2>
       <div class="clock" aria-hidden="true">
-        <span class="reel"><span class="reel-in"><i>1</i><i>1</i><i>1</i><i>2</i></span></span><span class="reel reel--u"><span class="reel-in"><i>2</i><i>6</i><i>9</i><i>1</i></span></span><span class="clock-min">:00</span>
+        <span class="reel"><span class="reel-in"><i>12<span class="clock-min">:00</span><span class="clock-ap">p.m.</span></i><i>4<span class="clock-min">:00</span><span class="clock-ap">p.m.</span></i><i>7<span class="clock-min">:00</span><span class="clock-ap">p.m.</span></i><i>9<span class="clock-min">:00</span><span class="clock-ap">p.m.</span></i></span></span>
       </div>
       <div class="day-texts">
       <article class="m is-active" data-i="0">
         <p class="m-kicker" data-i18n="day.k0">Mediodía · 12:00 p.m.</p>
         <h3 class="m-title" data-i18n="day.t0">Almuerzo criollo</h3>
-        <p class="m-text" data-i18n="day.p0">Abrimos al mediodía y el wok no para: lomo saltado, causas y ceviches para la mesa larga de la familia o del equipo de la oficina.</p>
+        <p class="m-text" data-i18n="day.p0">Abrimos al mediodía y el wok no para: lomo saltado, causas y ceviches para la mesa larga de la familia o del equipo de la oficina</p>
         <img class="m-img" src="assets/img/dia-mesa.jpg" alt="Mesa servida con varios platos de la carta de Pachanka, vista desde arriba" data-i18n-alt="alt.mesa" width="1000" height="1333" loading="lazy" decoding="async">
       </article>
       <article class="m" data-i="1">
@@ -203,13 +202,13 @@
       <article class="m" data-i="2">
         <p class="m-kicker" data-i18n="day.k2">Noche · 7:00 p.m.</p>
         <h3 class="m-title" data-i18n="day.t2">After office</h3>
-        <p class="m-text" data-i18n="day.p2">Se prende la barra: mocktails de la casa, limonadas de hierbas y maracuyá por litro hasta las once.</p>
+        <p class="m-text" data-i18n="day.p2">Se prende la barra: mocktails de la casa, limonadas de hierbas y maracuyá por litro hasta las once</p>
         <img class="m-img" src="assets/img/dia-barra.jpg" alt="La barra de Pachanka con dos tragos de la casa recién servidos" data-i18n-alt="alt.barra" width="1000" height="1333" loading="lazy" decoding="async">
       </article>
       <article class="m" data-i="3">
         <p class="m-kicker" data-i18n="day.k3">Fiesta · 9:00 p.m.</p>
         <h3 class="m-title" data-i18n="day.t3">Música en vivo</h3>
-        <p class="m-text" data-i18n="day.p3">Los viernes de quincena y de fin de mes se prende la fiesta: música criolla en vivo y la mesa termina siendo pista.</p><small class="m-note" data-i18n="day.note">*Solo viernes de quincena y de fin de mes.</small>
+        <p class="m-text" data-i18n="day.p3">Los viernes de quincena y de fin de mes se prende la fiesta: música criolla en vivo y la mesa termina siendo pista</p><small class="m-note" data-i18n="day.note">Solo viernes de quincena y de fin de mes</small>
         <img class="m-img" src="assets/img/musica-vivo.jpg" alt="Cantante en vivo en el escenario de Pachanka, con las luces de la noche" data-i18n-alt="alt.musica" width="1000" height="1333" loading="lazy" decoding="async">
       </article>
       </div>
@@ -222,10 +221,10 @@
           <span class="day-dot" style="--p:.6667;--x:-50%;--dc:var(--teal-d)"></span>
           <span class="day-dot" style="--p:1;--x:-100%;--dc:var(--brick-d)"></span>
         </div>
-        <button class="day-step is-active is-reached" style="--p:0;--x:0%" data-step="0" aria-label="Ir a las 12:00" data-i18n-aria="day.go0">12:00</button>
-        <button class="day-step" style="--p:.3333;--x:-50%" data-step="1" aria-label="Ir a las 16:00" data-i18n-aria="day.go1">16:00</button>
-        <button class="day-step" style="--p:.6667;--x:-50%" data-step="2" aria-label="Ir a las 19:00" data-i18n-aria="day.go2">19:00</button>
-        <button class="day-step" style="--p:1;--x:-100%" data-step="3" aria-label="Ir a las 21:00" data-i18n-aria="day.go3">21:00</button>
+        <button class="day-step is-active is-reached" style="--p:0;--x:0%" data-step="0" aria-label="Ir a las 12 p.m." data-i18n-aria="day.go0">12 p.m.</button>
+        <button class="day-step" style="--p:.3333;--x:-50%" data-step="1" aria-label="Ir a las 4 p.m." data-i18n-aria="day.go1">4 p.m.</button>
+        <button class="day-step" style="--p:.6667;--x:-50%" data-step="2" aria-label="Ir a las 7 p.m." data-i18n-aria="day.go2">7 p.m.</button>
+        <button class="day-step" style="--p:1;--x:-100%" data-step="3" aria-label="Ir a las 9 p.m." data-i18n-aria="day.go3">9 p.m.</button>
       </div>
     </div>
     <div class="day-right" aria-hidden="true">
@@ -245,20 +244,20 @@
   <!-- Nuestros clásicos -->
   <article class="split split--dark">
     <div class="split-media">
-      <img src="assets/img/clasicos-lomo.jpg" alt="Lomo saltado con papas amarillas y arroz, servido en el salón de Pachanka" data-i18n-alt="alt.lomo" width="1200" height="1500" loading="lazy" decoding="async" data-parallax="8">
+      <img src="assets/img/clasicos-lomo.jpg" alt="Lomo saltado con papas amarillas y arroz, servido en el salón de Pachanka" data-i18n-alt="alt.lomo" width="1200" height="1500" loading="lazy" decoding="async">
     </div>
     <div class="split-body">
       <p class="brush rv" data-i18n="c1.brush">Nuestros clásicos</p>
       <h2 class="title rv" data-i18n="c1.title">Conoce<br>nuestra carta</h2>
-      <p class="lede rv" data-i18n="c1.lede">Las recetas de siempre en su punto: el wok, la parrilla y la papa amarilla.</p>
+      <p class="lede rv" data-i18n="c1.lede">Las recetas de siempre en su punto: el wok, la parrilla y la papa amarilla</p>
       <ul class="menu">
-        <li class="rv"><b>Lomo saltado</b> — <span class="price">S/ 39.00</span><small data-i18n="c1.d1">Lomo fino y vegetales al wok, papas amarillas crujientes y arroz con choclo.</small></li>
-        <li class="rv"><b>Tacu tacu a lo pobre</b> — <span class="price">S/ 36.00</span><small data-i18n="c1.d2">Frejoles y arroz en costra crujiente, lomo al wok, huevo y plátano.</small></li>
-        <li class="rv"><b>Pechuga a la plancha</b> — <span class="price">S/ 30.00</span><small data-i18n="c1.d3">Con papas fritas, arroz y una ensalada mixta.</small></li>
-        <li class="rv"><b>Spaghetti al pesto</b> — <span class="price">S/ 30.00</span><small data-i18n="c1.d4">Con churrasco de res a la parrilla o milanesa de pollo.</small></li>
-        <li class="rv"><b>Tallarín saltado carretillero de pollo</b> — <span class="price">S/ 28.00</span><small data-i18n="c1.d5">Spaghetti salteado con pollo y vegetales en salsa carretillera.</small></li>
+        <li class="rv"><b>Lomo saltado</b> — <span class="price">S/ 39.00</span><small data-i18n="c1.d1">Lomo fino y vegetales al wok, papas amarillas crujientes y arroz con choclo</small></li>
+        <li class="rv"><b>Tacu tacu a lo pobre</b> — <span class="price">S/ 36.00</span><small data-i18n="c1.d2">Frejoles y arroz en costra crujiente, lomo al wok, huevo y plátano</small></li>
+        <li class="rv"><b>Pechuga a la plancha</b> — <span class="price">S/ 30.00</span><small data-i18n="c1.d3">Con papas fritas, arroz y una ensalada mixta</small></li>
+        <li class="rv"><b>Spaghetti al pesto</b> — <span class="price">S/ 30.00</span><small data-i18n="c1.d4">Con churrasco de res a la parrilla o milanesa de pollo</small></li>
+        <li class="rv"><b>Tallarín saltado carretillero de pollo</b> — <span class="price">S/ 28.00</span><small data-i18n="c1.d5">Spaghetti salteado con pollo y vegetales en salsa carretillera</small></li>
       </ul>
-      <p class="fine rv" data-i18n="c1.fine">Y para empezar: ceviche Pachanka, causa acevichada, leche de tigre y langostinos al panko.<br>*Precios en soles.</p>
+      <p class="fine rv" data-i18n="c1.fine">Y para empezar: ceviche Pachanka, causa acevichada, leche de tigre y langostinos al panko<br>Precios en soles</p>
       <div class="pills rv">
         <a class="pill pill--accent" href="https://creative-programming-partners.github.io/pachanka-carta-digital/#cat-clasicos" data-i18n="cta.fullmenu">Ver carta completa</a>
       </div>
@@ -268,18 +267,18 @@
   <!-- Del mar a tu plato -->
   <article class="split split--light split--rev">
     <div class="split-media">
-      <img src="assets/img/mar-ceviche.jpg" alt="Ceviche Pachanka en plato hondo, con palta, cancha y crocante encima" data-i18n-alt="alt.ceviche" width="1200" height="1500" loading="lazy" decoding="async" data-parallax="8">
+      <img src="assets/img/mar-ceviche.jpg" alt="Ceviche Pachanka en plato hondo, con palta, cancha y crocante encima" data-i18n-alt="alt.ceviche" width="1200" height="1500" loading="lazy" decoding="async">
     </div>
     <div class="split-body">
       <p class="brush rv" data-i18n="c2.brush">Del mar a tu plato</p>
       <h2 class="title title--dark rv" data-i18n="c2.title">El mar<br>en la mesa</h2>
-      <p class="lede rv" data-i18n="c2.lede">Pescado fresco, mariscos y el toque chalaco de la casa, del cevichito al arroz cremoso.</p>
+      <p class="lede rv" data-i18n="c2.lede">Pescado fresco, mariscos y el toque chalaco de la casa, del cevichito al arroz cremoso</p>
       <ul class="menu">
-        <li class="rv"><b>Ceviche Pachanka</b> — <span class="price">S/ 33.00</span><small data-i18n="c2.d1">Dados de pescado, láminas de pulpo y daditos de palta.</small></li>
-        <li class="rv"><b>Leche de tigre</b> — <span class="price">S/ 24.00</span><small data-i18n="c2.d2">Pescado y langostinos en salsa acevichada, con brocheta de chicharrón.</small></li>
-        <li class="rv"><b>Arroz con mariscos</b> — <span class="price">S/ 32.00</span><small data-i18n="c2.d3">Arroz cremoso salteado con frutos del mar y nuestro toque chalaco.</small></li>
-        <li class="rv"><b>Trío marino</b> — <span class="price">S/ 39.00</span><small data-i18n="c2.d4">Arroz cremoso de mariscos, cevichito de la casa y aros de calamar.</small></li>
-        <li class="rv"><b>Fetuccini fruto di mari</b> — <span class="price">S/ 34.00</span><small data-i18n="c2.d5">Mariscos en mantequilla y vino blanco, con filete de pescado al grill.</small></li>
+        <li class="rv"><b>Ceviche Pachanka</b> — <span class="price">S/ 33.00</span><small data-i18n="c2.d1">Dados de pescado, láminas de pulpo y daditos de palta</small></li>
+        <li class="rv"><b>Leche de tigre</b> — <span class="price">S/ 24.00</span><small data-i18n="c2.d2">Pescado y langostinos en salsa acevichada, con brocheta de chicharrón</small></li>
+        <li class="rv"><b>Arroz con mariscos</b> — <span class="price">S/ 32.00</span><small data-i18n="c2.d3">Arroz cremoso salteado con frutos del mar y nuestro toque chalaco</small></li>
+        <li class="rv"><b>Trío marino</b> — <span class="price">S/ 39.00</span><small data-i18n="c2.d4">Arroz cremoso de mariscos, cevichito de la casa y aros de calamar</small></li>
+        <li class="rv"><b>Fetuccini fruto di mari</b> — <span class="price">S/ 34.00</span><small data-i18n="c2.d5">Mariscos en mantequilla y vino blanco, con filete de pescado al grill</small></li>
       </ul>
       <div class="pills rv">
         <a class="pill" href="https://creative-programming-partners.github.io/pachanka-carta-digital/#cat-mar" data-i18n="cta.allsea">Ver todo lo del mar</a>
@@ -290,20 +289,20 @@
   <!-- Criollo fusión -->
   <article class="split split--dark">
     <div class="split-media">
-      <img src="assets/img/fusion-arroz.jpg" alt="Arroz cremoso con lomo saltado, de la carta de Pachanka" data-i18n-alt="alt.plate" width="1200" height="1500" loading="lazy" decoding="async" data-parallax="8">
+      <img src="assets/img/fusion-arroz.jpg" alt="Arroz cremoso con lomo saltado, de la carta de Pachanka" data-i18n-alt="alt.plate" width="1200" height="1500" loading="lazy" decoding="async">
     </div>
     <div class="split-body">
       <p class="brush rv" data-i18n="c3.brush">Criollo fusión</p>
       <h2 class="title rv" data-i18n="c3.title">Nuestros giros</h2>
       <p class="kicker rv" data-i18n="c3.hours">La selva, el chifa y la huancaína en la misma mesa</p>
       <ul class="menu">
-        <li class="rv"><b>Arroz cremoso con lomo saltado</b> — <span class="price">S/ 38.00</span><small data-i18n="c3.d1">Arroz en crema de ají amarillo y parmesano, montado con lomo al wok.</small></li>
-        <li class="rv"><b>Asado de tira de la abuela</b> — <span class="price">S/ 37.00</span><small data-i18n="c3.d2">Tres horas de cocción, con puré rústico y vegetales salteados.</small></li>
-        <li class="rv"><b>Chaufa amazónico</b> — <span class="price">S/ 30.00</span><small data-i18n="c3.d3">Cecina, chorizo amazónico, costras de pollo, plátano y ajicito de cocona.</small></li>
-        <li class="rv"><b>Fetuccini a la huancaína con lomo strogonoff</b> — <span class="price">S/ 38.00</span><small data-i18n="c3.d4">Fetuccini cremoso con lomo fino y champiñones en salsa strogonoff.</small></li>
-        <li class="rv"><b>Milanesa strogonoff</b> — <span class="price">S/ 32.00</span><small data-i18n="c3.d5">Pechuga al panko con champiñones en salsa strogonoff y papas peruanitas.</small></li>
+        <li class="rv"><b>Arroz cremoso con lomo saltado</b> — <span class="price">S/ 38.00</span><small data-i18n="c3.d1">Arroz en crema de ají amarillo y parmesano, montado con lomo al wok</small></li>
+        <li class="rv"><b>Asado de tira de la abuela</b> — <span class="price">S/ 37.00</span><small data-i18n="c3.d2">Tres horas de cocción, con puré rústico y vegetales salteados</small></li>
+        <li class="rv"><b>Chaufa amazónico</b> — <span class="price">S/ 30.00</span><small data-i18n="c3.d3">Cecina, chorizo amazónico, costras de pollo, plátano y ajicito de cocona</small></li>
+        <li class="rv"><b>Fetuccini a la huancaína con lomo strogonoff</b> — <span class="price">S/ 38.00</span><small data-i18n="c3.d4">Fetuccini cremoso con lomo fino y champiñones en salsa strogonoff</small></li>
+        <li class="rv"><b>Milanesa strogonoff</b> — <span class="price">S/ 32.00</span><small data-i18n="c3.d5">Pechuga al panko con champiñones en salsa strogonoff y papas peruanitas</small></li>
       </ul>
-      <p class="fine rv" data-i18n="c3.fine">Sábados y domingos: chanchito crujiente a la caja china, carapulcra con sopa seca y frejoles con seco de cabrito.</p>
+      <p class="fine rv" data-i18n="c3.fine">Sábados y domingos: chanchito crujiente a la caja china, carapulcra con sopa seca y frejoles con seco de cabrito</p>
       <div class="pills rv">
         <a class="pill pill--accent" href="https://creative-programming-partners.github.io/pachanka-carta-digital/#cat-fusion" data-i18n="cta.allfusion">Ver todo el criollo fusión</a>
       </div>
@@ -354,18 +353,18 @@
   <div class="reviews-grid">
     <div class="rev-score">
       <p class="brush rv" data-i18n="rev.brush">Lo que dicen en Google</p>
-      <div class="rating rv" role="img" aria-label="4,4 de 5 estrellas en Google" data-i18n-aria="rev.aria">
-        <span class="rating-num" data-i18n="rev.num">4,4</span>
+      <div class="rating rv" role="img" aria-label="4.5 de 5 estrellas en Google" data-i18n-aria="rev.aria">
+        <span class="rating-num" data-i18n="rev.num">4.5</span>
         <span class="stars" aria-hidden="true">
           <span class="stars-row stars-bg"><svg viewBox="0 0 120 24"><use href="#star" x="0"/><use href="#star" x="24"/><use href="#star" x="48"/><use href="#star" x="72"/><use href="#star" x="96"/></svg></span>
-          <span class="stars-row stars-fg" style="--fill:.88"><svg viewBox="0 0 120 24"><use href="#star" x="0"/><use href="#star" x="24"/><use href="#star" x="48"/><use href="#star" x="72"/><use href="#star" x="96"/></svg></span>
+          <span class="stars-row stars-fg" style="--fill:.9"><svg viewBox="0 0 120 24"><use href="#star" x="0"/><use href="#star" x="24"/><use href="#star" x="48"/><use href="#star" x="72"/><use href="#star" x="96"/></svg></span>
         </span>
       </div>
-      <p class="rating-count rv"><b>287</b> <span data-i18n="rev.count">reseñas en Google Maps</span></p>
+      <p class="rating-count rv"><b>303</b> <span data-i18n="rev.count">reseñas en Google Maps</span></p>
       <div class="pills rv">
         <a class="pill" href="https://maps.google.com/?cid=7583902838810946393" target="_blank" rel="noopener" data-i18n="rev.cta">Leer las reseñas en Google</a>
       </div>
-      <p class="rating-date rv" data-i18n="rev.date">Calificación y reseñas de Google Maps, septiembre de 2026.</p>
+      <p class="rating-date rv" data-i18n="rev.date">Calificación de Google Maps, noviembre de 2026</p>
     </div>
     <div class="rev-side">
       <div class="quotes rv" id="quotes">
@@ -471,17 +470,6 @@
         <span class="qdots" id="qDots" role="tablist" aria-label="Reseñas" data-i18n-aria="rev.dots"></span>
         <button class="qnav" type="button" id="qNext" aria-label="Reseña siguiente" data-i18n-aria="rev.next"><svg viewBox="0 0 24 24"><path d="m9 5 7 7-7 7"/></svg></button>
       </div>
-      <div class="topics rv">
-        <p class="topics-title" data-i18n="rev.dist">Cómo la califican en Google</p>
-        <ul>
-        <li style="--c:var(--sage);--v:1.0"><span>5 <span data-i18n="rev.stars">estrellas</span></span><i class="tbar"></i><b>190</b></li>
-        <li style="--c:var(--ochre);--v:0.332"><span>4 <span data-i18n="rev.stars">estrellas</span></span><i class="tbar"></i><b>63</b></li>
-        <li style="--c:var(--sand);--v:0.079"><span>3 <span data-i18n="rev.stars">estrellas</span></span><i class="tbar"></i><b>15</b></li>
-        <li style="--c:var(--blush);--v:0.032"><span>2 <span data-i18n="rev.stars">estrellas</span></span><i class="tbar"></i><b>6</b></li>
-        <li style="--c:var(--coral);--v:0.068"><span>1 <span data-i18n="rev.star">estrella</span></span><i class="tbar"></i><b>13</b></li>
-        </ul>
-        <p class="topics-note"><b>253</b> <span data-i18n="rev.dnote">de las 287 reseñas le ponen 4 o 5 estrellas.</span></p>
-      </div>
     </div>
   </div>
   <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><path id="star" d="M12 2.2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.4l-6.1 3.4 1.4-6.8-5.1-4.7 6.9-.8z"/></defs></svg>
@@ -528,12 +516,12 @@
               <span class="chk-box" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m5 12 5 5 9-10"/></svg></span>
               <span data-i18n="f.parking">Llegaré en vehículo propio</span>
             </label>
-            <p class="chk-note" id="rsvParkNote" hidden data-i18n="f.parking.note">Al enviar la reserva te confirmamos por WhatsApp la disponibilidad de estacionamiento.</p>
+            <p class="chk-note" id="rsvParkNote" hidden data-i18n="f.parking.note">Al enviar la reserva te confirmamos por WhatsApp la disponibilidad de estacionamiento</p>
           </div>
         </div>
         <p class="rsv-error" id="rsvError" role="alert" hidden></p>
         <button class="pill pill--accent rsv-submit" type="submit" data-i18n="f.submit">Enviar reserva por WhatsApp</button>
-        <p class="rsv-ok" id="rsvOk" role="status" hidden data-i18n="f.ok">Listo: envía el mensaje en WhatsApp y te confirmamos la reserva.</p>
+        <p class="rsv-ok" id="rsvOk" role="status" hidden data-i18n="f.ok">Listo: envía el mensaje en WhatsApp y te confirmamos la reserva</p>
       </form>
     </div>
     <div class="block rv" style="--c:var(--teal)">
@@ -543,7 +531,7 @@
     </div>
   </div>
   <div class="split-media">
-    <img src="assets/img/reservas-local.jpg" alt="Mesa servida en el salón de Pachanka, con la barra al fondo" data-i18n-alt="alt.salon" width="1200" height="1500" loading="lazy" decoding="async" data-parallax="8">
+    <img src="assets/img/reservas-local.jpg" alt="Mesa servida en el salón de Pachanka, con la barra al fondo" data-i18n-alt="alt.salon" width="1200" height="1500" loading="lazy" decoding="async">
   </div>
 </section>
 
@@ -554,18 +542,18 @@
     <h2 class="title title--teal rv" data-i18n="nav.events">Eventos y celebraciones</h2>
     <p class="strong rv" data-i18n="ev.q">¿Planeas un cumpleaños o una reunión?</p>
     <p class="rv" data-i18n="ev.p1">Música criolla en vivo los viernes de quincena y de fin de mes, partidos en pantalla y mesas largas para celebrar. Armamos la reunión contigo: decoración, entradas para compartir y la barra lista.</p>
-    <p class="strong rv" data-i18n="ev.p2">Cuéntanos la fecha y el número de personas.</p>
-    <p class="rv" data-i18n="ev.p3">El equipo de Pachanka te ayuda a organizar una celebración para recordar.</p>
+    <p class="strong rv" data-i18n="ev.p2">Cuéntanos la fecha y el número de personas</p>
+    <p class="rv" data-i18n="ev.p3">El equipo de Pachanka te ayuda a organizar una celebración para recordar</p>
   </div>
   <div class="gallery">
     <figure class="ev-card rv"><div class="gimg"><img src="assets/img/show-criollo.jpg" alt="Show de música criolla con bailarines de rojo y blanco" data-i18n-alt="alt.show" width="1000" height="1333" loading="lazy" decoding="async"></div>
-      <figcaption class="ev-body"><h3 data-i18n="ev.g1">Noches criollas</h3><p class="ev-sub" data-i18n="ev.s1">Quincena y fin de mes</p><p data-i18n="ev.d1">Música criolla en vivo y la mesa termina siendo pista.</p></figcaption></figure>
+      <figcaption class="ev-body"><h3 data-i18n="ev.g1">Noches criollas</h3><p class="ev-sub" data-i18n="ev.s1">Quincena y fin de mes</p><p data-i18n="ev.d1">Música criolla en vivo y la mesa termina siendo pista</p></figcaption></figure>
     <figure class="ev-card rv"><div class="gimg"><img src="assets/img/brindis.jpg" alt="Brindis con bebidas de la casa en una mesa de Pachanka" data-i18n-alt="alt.bday" width="720" height="960" loading="lazy" decoding="async"></div>
-      <figcaption class="ev-body"><h3 data-i18n="ev.g2">Cumpleaños</h3><p class="ev-sub" data-i18n="ev.s2">Decoración y brindis</p><p data-i18n="ev.d2">Armamos la mesa contigo: decoración, entradas para compartir y la barra lista.</p></figcaption></figure>
+      <figcaption class="ev-body"><h3 data-i18n="ev.g2">Cumpleaños</h3><p class="ev-sub" data-i18n="ev.s2">Decoración y brindis</p><p data-i18n="ev.d2">Armamos la mesa contigo: decoración, entradas para compartir y la barra lista</p></figcaption></figure>
     <figure class="ev-card rv"><div class="gimg"><img src="assets/img/mesa-larga.jpg" alt="Mesa larga con varios comensales brindando y piqueos al centro" data-i18n-alt="alt.family2" width="720" height="960" loading="lazy" decoding="async"></div>
-      <figcaption class="ev-body"><h3 data-i18n="ev.g3">Mesas largas</h3><p class="ev-sub" data-i18n="ev.s3">Familia, amigos u oficina</p><p data-i18n="ev.d3">Piqueos al centro y platos para compartir entre todos.</p></figcaption></figure>
+      <figcaption class="ev-body"><h3 data-i18n="ev.g3">Mesas largas</h3><p class="ev-sub" data-i18n="ev.s3">Familia, amigos u oficina</p><p data-i18n="ev.d3">Piqueos al centro y platos para compartir entre todos</p></figcaption></figure>
     <figure class="ev-card rv"><div class="gimg"><img src="assets/img/fachada-equipo.jpg" alt="El equipo de Pachanka celebrando su quinto aniversario" data-i18n-alt="alt.team" width="360" height="640" loading="lazy" decoding="async"></div>
-      <figcaption class="ev-body"><h3 data-i18n="ev.g4">Aniversarios</h3><p class="ev-sub" data-i18n="ev.s4">Fechas para recordar</p><p data-i18n="ev.d4">Cuéntanos la fecha y el número de personas, y lo organizamos juntos.</p></figcaption></figure>
+      <figcaption class="ev-body"><h3 data-i18n="ev.g4">Aniversarios</h3><p class="ev-sub" data-i18n="ev.s4">Fechas para recordar</p><p data-i18n="ev.d4">Cuéntanos la fecha y el número de personas, y lo organizamos juntos</p></figcaption></figure>
   </div>
   <div class="events-cta rv">
     <a class="pill pill--accent" href="#reservar" data-occasion="event" data-i18n="ev.cta">Organizar mi evento</a>
@@ -642,7 +630,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/CustomEase.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
 <script src="js/menu-data.js"></script>
-<script src="js/i18n.js?v=dna8"></script>
-<script src="js/main.js?v=dna8"></script>
+<script src="js/i18n.js?v=dna10"></script>
+<script src="js/main.js?v=dna11"></script>
 </body>
 </html>
