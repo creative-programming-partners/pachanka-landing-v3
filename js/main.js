@@ -417,7 +417,7 @@
       const n = esc(dishName(v.dish));
       return `<button class="vcard" type="button" data-i="${i}"${copy ? ' tabindex="-1" aria-hidden="true"' : ''} aria-label="${esc(T().vSee)}: ${n}">
         <span class="vcard-media">
-          <video muted loop playsinline preload="none" poster="assets/video/${v.f}.jpg" data-src="assets/video/${v.f}.mp4" aria-hidden="true"></video>
+          <video muted loop playsinline preload="none" poster="assets/video/${v.f}.jpg?v=2" data-src="assets/video/${v.f}.mp4" aria-hidden="true"></video>
           <span class="vcard-open">${EXPAND}<span>${esc(T().vOpen)}</span></span>
         </span>
         <span class="vcard-name">${n}</span>
@@ -466,7 +466,7 @@
   function fillVideo(i) {
     vIdx = (i + REEL.length) % REEL.length;
     const v = REEL[vIdx], e = DISHES.get(v.dish);
-    vboxVideo.poster = 'assets/video/' + v.f + '.jpg';
+    vboxVideo.poster = 'assets/video/' + v.f + '.jpg?v=2';
     vboxVideo.src = 'assets/video/' + v.f + '.mp4';
     vboxVideo.muted = true;                       // así puede arrancar solo; el volumen queda en los controles
     const p = vboxVideo.play(); if (p) p.catch(() => {});
