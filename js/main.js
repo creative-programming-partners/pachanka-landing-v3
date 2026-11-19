@@ -150,16 +150,26 @@
     const dt = new Date(y, m - 1, d + n);
     return `${dt.getFullYear()}-${String(dt.getMonth() + 1).padStart(2, '0')}-${String(dt.getDate()).padStart(2, '0')}`;
   };
+  // Español e inglés en 12 h (12:30 p.m.); francés en 24 h, como se usa en Francia (12 h 30)
   const fmtTime = mins => {
     const h = Math.floor(mins / 60), m = mins % 60, h12 = ((h + 11) % 12) + 1;
+    if (lang === 'fr') return m ? `${h}\u00a0h\u00a0${String(m).padStart(2, '0')}` : `${h}\u00a0h`;
     return `${h12}:${String(m).padStart(2, '0')} ${h < 12 ? 'a.m.' : 'p.m.'}`;
   };
-  const fmtHour = mins => { const h = Math.floor(mins / 60), h12 = ((h + 11) % 12) + 1; return `${h12} ${h < 12 ? 'a.m.' : 'p.m.'}`; };
+  const fmtHour = mins => {
+    const h = Math.floor(mins / 60), h12 = ((h + 11) % 12) + 1;
+    return lang === 'fr' ? `${h}\u00a0h` : `${h12} ${h < 12 ? 'a.m.' : 'p.m.'}`;
+  };
 
   /* ---------- Idioma ---------- */
+  const LANGS = ['es', 'en', 'fr'];
   let lang = 'es';
-  try { if (localStorage.getItem('pk-lang') === 'en') lang = 'en'; } catch (e) {}
+  try { const s = localStorage.getItem('pk-lang'); if (LANGS.includes(s)) lang = s; } catch (e) {}
   const T = () => PK_I18N.JS[lang];
+  // Nombre y descripción de un plato de PK_MENU en el idioma actual (si falta, el español)
+  const nameOf = d => d[lang] || d.es;
+  const descOf = d => (lang === 'en' ? d.den : lang === 'fr' ? d.dfr : d.des) || d.des || '';
+  const TODAY = { es: 'Hoy', en: 'Today', fr: 'Aujourd’hui' };
 
   /* ---------- Abierto ahora / Cerrado ---------- */
   function renderStatus() {
@@ -177,11 +187,29 @@
     $$('#hoursList .hrow').forEach(r => {
       const today = r.dataset.days && r.dataset.days.split(',').includes(String(now.wd));
       r.classList.toggle('is-today', !!today);
-      if (today) $('dt', r).dataset.today = lang === 'en' ? 'Today' : 'Hoy';
+      if (today) $('dt', r).dataset.today = TODAY[lang];
     });
   }
-  // Se actualiza al cambiar de minuto
-  setTimeout(() => { renderStatus(); setInterval(renderStatus, 60000); }, (60 - new Date().getSeconds()) * 1000);
+  /* ---------- Tema claro u oscuro según la hora de Lima ---------- */
+  // El <head> ya puso el tema al cargar. Aquí se revisa cada minuto: a las 6 p.m. pasa a oscuro y a las 6 a.m. a claro,
+  // con un fundido corto. Con ?tema=claro o ?tema=oscuro en la dirección queda fijo (para mostrar uno a mano).
+  const forcedTheme = /^(claro|oscuro)$/.test(new URLSearchParams(location.search).get('tema') || '');
+  function syncTheme() {
+    if (forcedTheme) return;
+    const h = Math.floor(limaNow().mins / 60);
+    const t = h >= 6 && h < 18 ? 'light' : 'dark';
+    const root = document.documentElement;
+    if (root.dataset.theme === t) return;
+    root.classList.add('theme-fade');
+    root.dataset.theme = t;
+    const meta = $('meta[name="theme-color"]');
+    if (meta) meta.setAttribute('content', t === 'light' ? '#f5f0e7' : '#110f0f');
+    setTimeout(() => root.classList.remove('theme-fade'), 700);
+  }
+  // Se actualizan al cambiar de minuto (y al volver a la pestaña, por si pasó la hora mientras estaba oculta)
+  const everyMinute = () => { renderStatus(); syncTheme(); };
+  setTimeout(() => { everyMinute(); setInterval(everyMinute, 60000); }, (60 - new Date().getSeconds()) * 1000);
+  document.addEventListener('visibilitychange', () => { if (!document.hidden) everyMinute(); });
 
   /* ---------- Formulario de reserva → WhatsApp ---------- */
   const form = $('#rsvForm'), errBox = $('#rsvError'), okBox = $('#rsvOk');
@@ -259,16 +287,16 @@
   const esc = s => s.replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
   function renderTabs() {
     tabsEl.innerHTML = PK_MENU.map(c =>
-      `<button class="mp-tab" type="button" role="tab" id="mpt-${c.id}" data-cat="${c.id}" aria-controls="mpBody" aria-selected="${c.id === currentCat}">${esc(c[lang])}</button>`).join('');
+      `<button class="mp-tab" type="button" role="tab" id="mpt-${c.id}" data-cat="${c.id}" aria-controls="mpBody" aria-selected="${c.id === currentCat}">${esc(nameOf(c))}</button>`).join('');
   }
   function renderCat() {
     const cat = PK_MENU.find(c => c.id === currentCat);
     if (!cat) return;
     let i = 0;
     bodyEl.innerHTML = cat.groups.map(g => {
-      const title = g[lang] ? `<h3 class="mp-group">${esc(g[lang])}</h3>` : '';
+      const title = g.es ? `<h3 class="mp-group">${esc(nameOf(g))}</h3>` : '';
       const items = g.items.map(it => {
-        const n = it[lang] || it.es, d = (lang === 'en' ? it.den : it.des) || '';
+        const n = nameOf(it), d = descOf(it);
         return `<li class="mp-item" style="--i:${Math.min(i++, 14)}"><div class="mp-row"><span class="mp-name">${esc(n)}</span><span class="mp-dots"></span><span class="mp-price">${money(it.p)}</span></div>${d ? `<p class="mp-desc">${esc(d)}</p>` : ''}</li>`;
       }).join('');
       return `${title}<ul class="mp-list">${items}</ul>`;
@@ -405,7 +433,7 @@
   ];
   const DISHES = new Map();
   PK_MENU.forEach(c => c.groups.forEach(g => g.items.forEach(d => DISHES.set(d.id, { d, cat: c }))));
-  const dishName = id => { const e = DISHES.get(id); return e ? (e.d[lang] || e.d.es) : ''; };
+  const dishName = id => { const e = DISHES.get(id); return e ? nameOf(e.d) : ''; };
 
   const track = $('#reelTrack'), vbox = $('#vbox'), vboxMedia = $('#vboxMedia'), vboxVideo = $('#vboxVideo');
   // La tarjeta avisa que el video se abre en grande
@@ -470,9 +498,9 @@
     vboxVideo.src = 'assets/video/' + v.f + '.mp4';
     vboxVideo.muted = true;                       // así puede arrancar solo; el volumen queda en los controles
     const p = vboxVideo.play(); if (p) p.catch(() => {});
-    $('#vboxCat').textContent = e ? e.cat[lang] : '';
-    $('#vboxName').textContent = e ? (e.d[lang] || e.d.es) : '';
-    $('#vboxDesc').textContent = e ? ((lang === 'en' ? e.d.den : e.d.des) || '') : '';
+    $('#vboxCat').textContent = e ? nameOf(e.cat) : '';
+    $('#vboxName').textContent = e ? nameOf(e.d) : '';
+    $('#vboxDesc').textContent = e ? descOf(e.d) : '';
     $('#vboxPrice').textContent = e ? money2(e.d.p) : '';
     $('#vboxCount').textContent = (vIdx + 1) + ' ' + T().vOf + ' ' + REEL.length;
   }
@@ -568,6 +596,7 @@
     langHooks.forEach(h => h.before());
     PK_I18N.apply(lang);
     langHooks.forEach(h => h.after());
+    $$('.lang [data-l]').forEach(b => b.setAttribute('aria-pressed', b.dataset.l === lang));
     renderStatus();
     buildPeople();
     buildTimes();
@@ -577,7 +606,8 @@
     renderReel();
     if (!initial && window.ScrollTrigger) ScrollTrigger.refresh();
   }
-  $$('.js-lang').forEach(b => b.addEventListener('click', () => setLang(lang === 'es' ? 'en' : 'es')));
+  // Selector de idioma: ES · EN · FR (uno en la cabecera y otro en el menú lateral)
+  $$('.lang [data-l]').forEach(b => b.addEventListener('click', () => { if (b.dataset.l !== lang) setLang(b.dataset.l); }));
   initDate();
   setLang(lang, true);
 
@@ -732,7 +762,7 @@
     /* --- Reseñas: la nota y el número de reseñas cuentan desde cero al aparecer --- */
     const rNum = $('.rating-num'), rCount = $('.rating-count b');
     if (rNum) {
-      const fmt = v => v.toFixed(1);   // punto decimal en los dos idiomas, igual que los precios (S/ 39.00)
+      const fmt = v => lang === 'fr' ? v.toFixed(1).replace('.', ',') : v.toFixed(1);   // en francés el decimal va con coma
       const goal = { v: parseFloat(rNum.textContent.replace(',', '.')) || 0, n: rCount ? parseInt(rCount.textContent, 10) || 0 : 0 };
       const o = { v: 0, n: 0 };
       const paintNum = () => { rNum.textContent = fmt(o.v); if (rCount) rCount.textContent = Math.round(o.n); };

@@ -21,6 +21,18 @@
 <meta property="og:locale:alternate" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#110f0f">
+<script>
+/* Tema según la hora de Lima: claro de 6 a.m. a 6 p.m. y oscuro desde las 6 p.m.
+   Corre antes de pintar la página para que no se vea el otro tema un instante.
+   Para mostrar uno a mano: ?tema=claro o ?tema=oscuro */
+(function () {
+  var q = new URLSearchParams(location.search).get('tema');
+  var h = +new Intl.DateTimeFormat('en-US', { timeZone: 'America/Lima', hour: 'numeric', hourCycle: 'h23' }).format(new Date());
+  var t = q === 'claro' ? 'light' : q === 'oscuro' ? 'dark' : (h >= 6 && h < 18 ? 'light' : 'dark');
+  document.documentElement.setAttribute('data-theme', t);
+  document.querySelector('meta[name="theme-color"]').setAttribute('content', t === 'light' ? '#f5f0e7' : '#110f0f');
+})();
+</script>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231E1A17'/%3E%3Ctext x='50%25' y='56%25' dominant-baseline='middle' text-anchor='middle' font-family='Georgia' font-size='44' font-weight='700' fill='%23D4A25F'%3EP%3C/text%3E%3C/svg%3E">
 
 <!-- Ficha de restaurante para Google (horario, dirección, carta, reservas) -->
@@ -64,7 +76,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Chewy&family=Fraunces:opsz,wght,SOFT@9..144,300..700,0..100&family=Hanken+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <script>document.documentElement.classList.add('js');if('scrollRestoration' in history)history.scrollRestoration='manual';</script>
-<link rel="stylesheet" href="css/styles.css?v=dna11">
+<link rel="stylesheet" href="css/styles.css?v=dna14">
 </head>
 <body>
 
@@ -101,7 +113,7 @@
   </nav>
   <div class="hdr-right">
     <span class="status js-status" aria-live="polite"><i class="status-dot"></i><span class="status-text"></span></span>
-    <button class="lang js-lang" id="langBtn" type="button" aria-label="Ver en inglés" data-i18n-aria="lang.switch"><span data-l="es">ES</span><span data-l="en">EN</span></button>
+    <div class="lang" role="group" aria-label="Idioma" data-i18n-aria="lang.group"><button type="button" data-l="es" lang="es" aria-label="Español">ES</button><button type="button" data-l="en" lang="en" aria-label="English">EN</button><button type="button" data-l="fr" lang="fr" aria-label="Français">FR</button></div>
     <a class="pill pill--hdr" href="#reservar" data-i18n="cta.book">Reserva aquí</a>
   </div>
 </header>
@@ -112,7 +124,7 @@
   <ul>
     <li><a class="drawer-cta" href="#reservar" data-i18n="cta.book">Reserva aquí</a></li>
     <li class="drawer-status"><span class="status js-status"><i class="status-dot"></i><span class="status-text"></span></span></li>
-    <li class="drawer-lang"><button class="lang js-lang" type="button" aria-label="Ver en inglés" data-i18n-aria="lang.switch"><span data-l="es">ES</span><span data-l="en">EN</span></button></li>
+    <li class="drawer-lang"><div class="lang" role="group" aria-label="Idioma" data-i18n-aria="lang.group"><button type="button" data-l="es" lang="es" aria-label="Español">ES</button><button type="button" data-l="en" lang="en" aria-label="English">EN</button><button type="button" data-l="fr" lang="fr" aria-label="Français">FR</button></div></li>
     <li class="drawer-sep"></li>
     <li><a href="#un-dia" data-i18n="nav.day">Un día en Pachanka</a></li>
     <li><a href="#carta" data-i18n="nav.menu">Nuestra carta</a></li>
@@ -184,7 +196,7 @@
     <div class="day-left">
       <h2 class="day-kicker brush rv" data-i18n="nav.day">Un día en Pachanka</h2>
       <div class="clock" aria-hidden="true">
-        <span class="reel"><span class="reel-in"><i>12<span class="clock-min">:00</span><span class="clock-ap">p.m.</span></i><i>4<span class="clock-min">:00</span><span class="clock-ap">p.m.</span></i><i>7<span class="clock-min">:00</span><span class="clock-ap">p.m.</span></i><i>9<span class="clock-min">:00</span><span class="clock-ap">p.m.</span></i></span></span>
+        <span class="reel"><span class="reel-in"><i data-i18n="day.c0">12<span class="clock-min">:00</span><span class="clock-ap">p.m.</span></i><i data-i18n="day.c1">4<span class="clock-min">:00</span><span class="clock-ap">p.m.</span></i><i data-i18n="day.c2">7<span class="clock-min">:00</span><span class="clock-ap">p.m.</span></i><i data-i18n="day.c3">9<span class="clock-min">:00</span><span class="clock-ap">p.m.</span></i></span></span>
       </div>
       <div class="day-texts">
       <article class="m is-active" data-i="0">
@@ -221,10 +233,10 @@
           <span class="day-dot" style="--p:.6667;--x:-50%;--dc:var(--teal-d)"></span>
           <span class="day-dot" style="--p:1;--x:-100%;--dc:var(--brick-d)"></span>
         </div>
-        <button class="day-step is-active is-reached" style="--p:0;--x:0%" data-step="0" aria-label="Ir a las 12 p.m." data-i18n-aria="day.go0">12 p.m.</button>
-        <button class="day-step" style="--p:.3333;--x:-50%" data-step="1" aria-label="Ir a las 4 p.m." data-i18n-aria="day.go1">4 p.m.</button>
-        <button class="day-step" style="--p:.6667;--x:-50%" data-step="2" aria-label="Ir a las 7 p.m." data-i18n-aria="day.go2">7 p.m.</button>
-        <button class="day-step" style="--p:1;--x:-100%" data-step="3" aria-label="Ir a las 9 p.m." data-i18n-aria="day.go3">9 p.m.</button>
+        <button class="day-step is-active is-reached" style="--p:0;--x:0%" data-step="0" aria-label="Ir a las 12 p.m." data-i18n-aria="day.go0" data-i18n="day.s0">12 p.m.</button>
+        <button class="day-step" style="--p:.3333;--x:-50%" data-step="1" aria-label="Ir a las 4 p.m." data-i18n-aria="day.go1" data-i18n="day.s1">4 p.m.</button>
+        <button class="day-step" style="--p:.6667;--x:-50%" data-step="2" aria-label="Ir a las 7 p.m." data-i18n-aria="day.go2" data-i18n="day.s2">7 p.m.</button>
+        <button class="day-step" style="--p:1;--x:-100%" data-step="3" aria-label="Ir a las 9 p.m." data-i18n-aria="day.go3" data-i18n="day.s3">9 p.m.</button>
       </div>
     </div>
     <div class="day-right" aria-hidden="true">
@@ -629,8 +641,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/Flip.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/CustomEase.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
-<script src="js/menu-data.js"></script>
-<script src="js/i18n.js?v=dna10"></script>
-<script src="js/main.js?v=dna12"></script>
+<script src="js/menu-data.js?v=2"></script>
+<script src="js/i18n.js?v=dna13"></script>
+<script src="js/main.js?v=dna14"></script>
 </body>
 </html>
