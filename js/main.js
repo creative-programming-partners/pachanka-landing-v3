@@ -426,8 +426,10 @@
   const REEL = [
     { f: 'lomo-saltado-1',    dish: 'lomo-saltado' },
     { f: 'carapulcra-1',      dish: 'carapulcra-sopa-seca' },
+    { f: 'alfredo-1',         dish: 'spaguetti-alfredo' },
     { f: 'langostinos-1',     dish: 'langostinos-al-panko' },
     { f: 'tacu-mar-tierra-1', dish: 'tacu-tacu-mar-y-tierra' },
+    { f: 'milanesa-kids-1',   dish: 'milanesa-kids' },
     { f: 'fruto-di-mare-1',   dish: 'fetuccini-fruto-di-mari' },
     { f: 'lomo-saltado-2',    dish: 'lomo-saltado' }
   ];
@@ -462,8 +464,8 @@
 
   // Los videos de la cinta solo se descargan y corren cuando la sección está a la vista
   // Con el video grande abierto, la cinta queda quieta: detrás hay un desenfoque que se recalcularía en cada cuadro
-  // La cinta lleva 18 videos (la lista tres veces) y en pantalla caben 5 o 6: cada uno se descarga
-  // y corre solo mientras su tarjeta se ve. Así el navegador no decodifica 18 videos a la vez.
+  // La cinta lleva 24 videos (la lista tres veces) y en pantalla caben 5 o 6: cada uno se descarga
+  // y corre solo mientras su tarjeta se ve. Así el navegador no decodifica 24 videos a la vez.
   let reelOn = false;
   const shown = new WeakSet();
   const syncVideo = v => {
@@ -735,7 +737,7 @@
       reelGsap = true;
       track.classList.remove('is-running');
       const setX = gsap.quickSetter(track, 'xPercent');
-      const THIRD = 100 / 3, SPEED = THIRD / 40;   // un tercio de la cinta cada 40 s, como antes
+      const THIRD = 100 / 3, SPEED = THIRD / 54;   // un tercio de la cinta cada 54 s, el mismo ritmo que con seis videos
       const sp = { base: 1, boost: 0 };
       const baseTo = gsap.quickTo(sp, 'base', { duration: .8, ease: 'power2.out' });
       const boostTo = gsap.quickTo(sp, 'boost', { duration: .5, ease: 'power3.out' });

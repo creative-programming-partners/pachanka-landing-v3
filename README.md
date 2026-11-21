@@ -34,6 +34,11 @@ Pensada para ir fluida también en equipos modestos y sin aceleración gráfica:
 
 ## Ver en local
 
+En Windows, doble clic en **`ver-en-local.cmd`**: abre el navegador con la web
+y deja el servidor corriendo (cierra la ventana negra para apagarlo).
+
+A mano, desde la carpeta del proyecto:
+
 ```
 python -m http.server 8010
 ```
