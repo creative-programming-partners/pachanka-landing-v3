@@ -14,15 +14,9 @@
 # - Strict-Transport-Security: el navegador entra siempre por https.
 # - X-Frame-Options: ninguna otra web puede mostrar esta dentro de un marco.
 # - Permissions-Policy: la pagina no pide camara, microfono ni ubicacion.
-# - Content-Security-Policy-Report-Only: lista de los sitios de donde la pagina puede
-#   cargar cosas. Por ahora solo avisa en la consola del navegador y no bloquea nada.
-#   Si agregas un script, una fuente o un mapa de otro sitio, suma ese sitio aqui.
-#   Cuando pase una semana sin avisos, se puede cambiar el nombre a
-#   Content-Security-Policy para que bloquee de verdad.
 /*
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
   Strict-Transport-Security: max-age=31536000
   X-Frame-Options: SAMEORIGIN
   Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=()
-  Content-Security-Policy-Report-Only: default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; media-src 'self'; frame-src https://maps.google.com https://www.google.com; connect-src 'self' https://cloudflareinsights.com; object-src 'none'; base-uri 'self'; form-action 'self'
