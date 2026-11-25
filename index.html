@@ -76,9 +76,39 @@
 <link href="https://fonts.googleapis.com/css2?family=Chewy&family=Fraunces:opsz,wght,SOFT@9..144,300..700,0..100&family=Hanken+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <script>document.documentElement.classList.add('js');if('scrollRestoration' in history)history.scrollRestoration='manual';</script>
-<link rel="stylesheet" href="css/styles.css?v=dna14">
+<!-- Diseño: un archivo por sección, en este orden (el orden importa). Colores: css/01-base.css y css/20-tema-claro.css -->
+<link rel="stylesheet" href="css/01-base.css?v=org1">
+<link rel="stylesheet" href="css/02-botones-y-titulos.css?v=org1">
+<link rel="stylesheet" href="css/03-pantalla-de-carga.css?v=org1">
+<link rel="stylesheet" href="css/04-cabecera-y-menu.css?v=org1">
+<link rel="stylesheet" href="css/05-portada.css?v=org1">
+<link rel="stylesheet" href="css/06-revelado.css?v=org1">
+<link rel="stylesheet" href="css/07-un-dia.css?v=org1">
+<link rel="stylesheet" href="css/08-carta-paneles.css?v=org1">
+<link rel="stylesheet" href="css/09-eventos.css?v=org1">
+<link rel="stylesheet" href="css/10-ubicanos.css?v=org1">
+<link rel="stylesheet" href="css/11-pie.css?v=org1">
+<link rel="stylesheet" href="css/12-abierto-e-idioma.css?v=org1">
+<link rel="stylesheet" href="css/13-carta-completa.css?v=org1">
+<link rel="stylesheet" href="css/14-resenas.css?v=org1">
+<link rel="stylesheet" href="css/15-reservas.css?v=org1">
+<link rel="stylesheet" href="css/16-videos.css?v=org1">
+<link rel="stylesheet" href="css/17-avisos-y-casilla.css?v=org1">
+<link rel="stylesheet" href="css/18-celular-y-tablet.css?v=org1">
+<link rel="stylesheet" href="css/19-animaciones-scroll.css?v=org1">
+<link rel="stylesheet" href="css/20-tema-claro.css?v=org1">
+<link rel="stylesheet" href="css/21-movimiento-reducido.css?v=org1">
 </head>
 <body>
+<!-- =========================================================
+     PACHANKA — LANDING
+     Aquí están los textos en español de cada sección y las fotos.
+     - Precios, platos y descripciones: contenido/carta.js
+     - WhatsApp de reservas, horario y videos: contenido/restaurante.js
+     - Textos en inglés y francés: contenido/textos-en.js y textos-fr.js
+     - Guía paso a paso: COMO-EDITAR.md
+     Cada sección empieza con un comentario en mayúsculas (PORTADA, CARTA…).
+     ========================================================= -->
 
 <!-- PANTALLA DE CARGA -->
 <div class="loader" id="loader" aria-hidden="true">
@@ -263,11 +293,11 @@
       <h2 class="title rv" data-i18n="c1.title">Conoce<br>nuestra carta</h2>
       <p class="lede rv" data-i18n="c1.lede">Las recetas de siempre en su punto: el wok, la parrilla y la papa amarilla</p>
       <ul class="menu">
-        <li class="rv"><b>Lomo saltado</b> — <span class="price">S/ 39.00</span><small data-i18n="c1.d1">Lomo fino y vegetales al wok, papas amarillas crujientes y arroz con choclo</small></li>
-        <li class="rv"><b>Tacu tacu a lo pobre</b> — <span class="price">S/ 36.00</span><small data-i18n="c1.d2">Frejoles y arroz en costra crujiente, lomo al wok, huevo y plátano</small></li>
-        <li class="rv"><b>Pechuga a la plancha</b> — <span class="price">S/ 30.00</span><small data-i18n="c1.d3">Con papas fritas, arroz y una ensalada mixta</small></li>
-        <li class="rv"><b>Spaghetti al pesto</b> — <span class="price">S/ 30.00</span><small data-i18n="c1.d4">Con churrasco de res a la parrilla o milanesa de pollo</small></li>
-        <li class="rv"><b>Tallarín saltado carretillero de pollo</b> — <span class="price">S/ 28.00</span><small data-i18n="c1.d5">Spaghetti salteado con pollo y vegetales en salsa carretillera</small></li>
+        <li class="rv"><b>Lomo saltado</b> — <span class="price" data-plato="lomo-saltado">S/ 39.00</span><small data-i18n="c1.d1">Lomo fino y vegetales al wok, papas amarillas crujientes y arroz con choclo</small></li>
+        <li class="rv"><b>Tacu tacu a lo pobre</b> — <span class="price" data-plato="tacu-tacu-a-lo-pobre">S/ 36.00</span><small data-i18n="c1.d2">Frejoles y arroz en costra crujiente, lomo al wok, huevo y plátano</small></li>
+        <li class="rv"><b>Pechuga a la plancha</b> — <span class="price" data-plato="pechuga-a-la-plancha">S/ 30.00</span><small data-i18n="c1.d3">Con papas fritas, arroz y una ensalada mixta</small></li>
+        <li class="rv"><b>Spaghetti al pesto</b> — <span class="price" data-plato="spaghetti-al-pesto">S/ 30.00</span><small data-i18n="c1.d4">Con churrasco de res a la parrilla o milanesa de pollo</small></li>
+        <li class="rv"><b>Tallarín saltado carretillero de pollo</b> — <span class="price" data-plato="tallarin-carretillero-pollo">S/ 28.00</span><small data-i18n="c1.d5">Spaghetti salteado con pollo y vegetales en salsa carretillera</small></li>
       </ul>
       <p class="fine rv" data-i18n="c1.fine">Y para empezar: ceviche Pachanka, causa acevichada, leche de tigre y langostinos al panko<br>Precios en soles</p>
       <div class="pills rv">
@@ -286,11 +316,11 @@
       <h2 class="title title--dark rv" data-i18n="c2.title">El mar<br>en la mesa</h2>
       <p class="lede rv" data-i18n="c2.lede">Pescado fresco, mariscos y el toque chalaco de la casa, del cevichito al arroz cremoso</p>
       <ul class="menu">
-        <li class="rv"><b>Ceviche Pachanka</b> — <span class="price">S/ 33.00</span><small data-i18n="c2.d1">Dados de pescado, láminas de pulpo y daditos de palta</small></li>
-        <li class="rv"><b>Leche de tigre</b> — <span class="price">S/ 24.00</span><small data-i18n="c2.d2">Pescado y langostinos en salsa acevichada, con brocheta de chicharrón</small></li>
-        <li class="rv"><b>Arroz con mariscos</b> — <span class="price">S/ 32.00</span><small data-i18n="c2.d3">Arroz cremoso salteado con frutos del mar y nuestro toque chalaco</small></li>
-        <li class="rv"><b>Trío marino</b> — <span class="price">S/ 39.00</span><small data-i18n="c2.d4">Arroz cremoso de mariscos, cevichito de la casa y aros de calamar</small></li>
-        <li class="rv"><b>Fetuccini fruto di mari</b> — <span class="price">S/ 34.00</span><small data-i18n="c2.d5">Mariscos en mantequilla y vino blanco, con filete de pescado al grill</small></li>
+        <li class="rv"><b>Ceviche Pachanka</b> — <span class="price" data-plato="ceviche-pachanka">S/ 33.00</span><small data-i18n="c2.d1">Dados de pescado, láminas de pulpo y daditos de palta</small></li>
+        <li class="rv"><b>Leche de tigre</b> — <span class="price" data-plato="leche-de-tigre">S/ 24.00</span><small data-i18n="c2.d2">Pescado y langostinos en salsa acevichada, con brocheta de chicharrón</small></li>
+        <li class="rv"><b>Arroz con mariscos</b> — <span class="price" data-plato="arroz-con-mariscos">S/ 32.00</span><small data-i18n="c2.d3">Arroz cremoso salteado con frutos del mar y nuestro toque chalaco</small></li>
+        <li class="rv"><b>Trío marino</b> — <span class="price" data-plato="trio-marino">S/ 39.00</span><small data-i18n="c2.d4">Arroz cremoso de mariscos, cevichito de la casa y aros de calamar</small></li>
+        <li class="rv"><b>Fetuccini fruto di mari</b> — <span class="price" data-plato="fetuccini-fruto-di-mari">S/ 34.00</span><small data-i18n="c2.d5">Mariscos en mantequilla y vino blanco, con filete de pescado al grill</small></li>
       </ul>
       <div class="pills rv">
         <a class="pill" href="https://creative-programming-partners.github.io/pachanka-carta-digital/#cat-mar" data-i18n="cta.allsea">Ver todo lo del mar</a>
@@ -308,11 +338,11 @@
       <h2 class="title rv" data-i18n="c3.title">Nuestros giros</h2>
       <p class="kicker rv" data-i18n="c3.hours">La selva, el chifa y la huancaína en la misma mesa</p>
       <ul class="menu">
-        <li class="rv"><b>Arroz cremoso con lomo saltado</b> — <span class="price">S/ 38.00</span><small data-i18n="c3.d1">Arroz en crema de ají amarillo y parmesano, montado con lomo al wok</small></li>
-        <li class="rv"><b>Asado de tira de la abuela</b> — <span class="price">S/ 37.00</span><small data-i18n="c3.d2">Tres horas de cocción, con puré rústico y vegetales salteados</small></li>
-        <li class="rv"><b>Chaufa amazónico</b> — <span class="price">S/ 30.00</span><small data-i18n="c3.d3">Cecina, chorizo amazónico, costras de pollo, plátano y ajicito de cocona</small></li>
-        <li class="rv"><b>Fetuccini a la huancaína con lomo strogonoff</b> — <span class="price">S/ 38.00</span><small data-i18n="c3.d4">Fetuccini cremoso con lomo fino y champiñones en salsa strogonoff</small></li>
-        <li class="rv"><b>Milanesa strogonoff</b> — <span class="price">S/ 32.00</span><small data-i18n="c3.d5">Pechuga al panko con champiñones en salsa strogonoff y papas peruanitas</small></li>
+        <li class="rv"><b>Arroz cremoso con lomo saltado</b> — <span class="price" data-plato="arroz-cremoso-lomo">S/ 38.00</span><small data-i18n="c3.d1">Arroz en crema de ají amarillo y parmesano, montado con lomo al wok</small></li>
+        <li class="rv"><b>Asado de tira de la abuela</b> — <span class="price" data-plato="asado-de-tira">S/ 37.00</span><small data-i18n="c3.d2">Tres horas de cocción, con puré rústico y vegetales salteados</small></li>
+        <li class="rv"><b>Chaufa amazónico</b> — <span class="price" data-plato="chaufa-amazonico">S/ 30.00</span><small data-i18n="c3.d3">Cecina, chorizo amazónico, costras de pollo, plátano y ajicito de cocona</small></li>
+        <li class="rv"><b>Fetuccini a la huancaína con lomo strogonoff</b> — <span class="price" data-plato="fetuccini-huancaina-strogonoff">S/ 38.00</span><small data-i18n="c3.d4">Fetuccini cremoso con lomo fino y champiñones en salsa strogonoff</small></li>
+        <li class="rv"><b>Milanesa strogonoff</b> — <span class="price" data-plato="milanesa-strogonoff">S/ 32.00</span><small data-i18n="c3.d5">Pechuga al panko con champiñones en salsa strogonoff y papas peruanitas</small></li>
       </ul>
       <p class="fine rv" data-i18n="c3.fine">Sábados y domingos: chanchito crujiente a la caja china, carapulcra con sopa seca y frejoles con seco de cabrito</p>
       <div class="pills rv">
@@ -641,8 +671,14 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/Flip.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/CustomEase.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
-<script src="js/menu-data.js?v=2"></script>
-<script src="js/i18n.js?v=dna13"></script>
-<script src="js/main.js?v=dna14"></script>
+<!-- Contenido que se edita: datos del restaurante, carta y textos en inglés y francés (carpeta contenido/) -->
+<script src="contenido/restaurante.js?v=org1"></script>
+<script src="contenido/carta.js?v=org1"></script>
+<script src="contenido/textos-es.js?v=org1"></script>
+<script src="contenido/textos-en.js?v=org1"></script>
+<script src="contenido/textos-fr.js?v=org1"></script>
+<!-- Funcionamiento de la página (no hace falta editarlo) -->
+<script src="js/idiomas.js?v=org1"></script>
+<script src="js/main.js?v=org1"></script>
 </body>
 </html>

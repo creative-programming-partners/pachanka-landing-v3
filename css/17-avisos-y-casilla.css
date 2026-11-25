@@ -1,0 +1,36 @@
+/* =========================================================
+   AVISOS DE QUE SE PUEDE SEGUIR (SCROLL)
+   ========================================================= */
+.day-cue{display:flex;align-items:center;gap:8px;margin:16px 0 0;font-size:13px;font-weight:500;color:var(--muted);opacity:0;transition:opacity .3s var(--ease-out)}
+.day-cue svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.day.is-pinned .day-cue{opacity:1}
+.day[data-step="3"] .day-cue{opacity:0}
+.day--static .day-cue{display:none}
+.day-arrow{position:absolute;right:clamp(8px,2vw,32px);top:50%;margin-top:-12px;opacity:0;transition:opacity .3s var(--ease-out)}
+.day-arrow svg{width:24px;height:24px;fill:none;stroke:var(--cream);stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.day.is-pinned .day-arrow{opacity:.5}
+.day[data-step="3"] .day-arrow{opacity:0}
+.day--static .day-arrow{display:none}
+.mp-more{position:absolute;left:50%;bottom:64px;z-index:2;width:36px;height:36px;margin-left:-18px;border-radius:50%;display:grid;place-items:center;background:var(--elev);border:1px solid var(--line);opacity:0;transform:translate3d(0,8px,0);transition:opacity .3s var(--ease-out), transform .3s var(--ease-out)}
+.mp-more svg{width:18px;height:18px;fill:none;stroke:var(--cream);stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.menu-panel.open .mp-more.is-on{opacity:1;transform:none}
+.mp-tabs{-webkit-mask-image:linear-gradient(to right,#000 calc(100% - 42px),transparent);mask-image:linear-gradient(to right,#000 calc(100% - 42px),transparent)}
+.mp-tabs.is-end{-webkit-mask-image:none;mask-image:none}
+.vreel-cue{position:absolute;top:50%;z-index:3;margin-top:-36px;width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:rgba(var(--shade-rgb),.72);border:1px solid var(--line-2);pointer-events:none}
+.vreel-cue svg{width:16px;height:16px;fill:none;stroke:var(--cream);stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.vreel-cue--l{left:clamp(8px,1.4vw,16px)}
+.vreel-cue--r{right:clamp(8px,1.4vw,16px)}
+/* "Ver en grande": solo el ícono en una esquina; el texto queda para lectores de pantalla */
+.vcard-open{position:absolute;right:8px;bottom:8px;z-index:2;width:32px;height:32px;border-radius:50%;display:grid;place-items:center;color:#e4dbc6;background:rgba(17,15,15,.72);border:1px solid rgba(228,219,198,.12)}
+.vcard-open svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.vcard-open span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* Casilla de estacionamiento */
+.chk{display:flex;align-items:center;gap:12px;font-size:15px;font-weight:500;color:var(--cream);cursor:pointer}
+.chk input{position:absolute;opacity:0;width:0;height:0}
+.chk-box{flex:0 0 auto;width:20px;height:20px;border-radius:6px;border:1.5px solid var(--line-2);display:grid;place-items:center;transition:background-color .16s var(--ease-out),border-color .16s var(--ease-out)}
+.chk-box svg{width:14px;height:14px;fill:none;stroke:var(--on-gold);stroke-width:2;stroke-linecap:round;stroke-linejoin:round;opacity:0;transform:scale(.8);transition:opacity .16s var(--ease-out), transform .16s var(--ease-out)}
+.chk input:checked + .chk-box{background:var(--gold);border-color:var(--gold)}
+.chk input:checked + .chk-box svg{opacity:1;transform:none}
+.chk input:focus-visible + .chk-box{outline:2px solid var(--gold-ink);outline-offset:3px}
+.chk-note{margin:8px 0 0;padding-left:32px;font-size:14px;line-height:1.5;font-weight:400;color:var(--muted)}

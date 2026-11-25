@@ -1,0 +1,17 @@
+/* =========================================================
+   ANIMACIONES DE SCROLL (GSAP) — solo existen si GSAP carga
+   ========================================================= */
+/* Línea de avance de la página, sobre la cabecera */
+.scroll-prog{position:fixed;top:0;left:0;right:0;z-index:120;height:2px;background:var(--muted);transform:scaleX(0);transform-origin:0 50%;pointer-events:none}
+/* Pincelada: la etiqueta pierde su fondo fijo y lo pinta un SVG detrás del texto */
+.brush.has-paint{position:relative;isolation:isolate;background:none;color:transparent;transition:color .3s var(--ease-out)}
+.brush.has-paint.is-painted{color:var(--on-gold)}
+.bp{position:absolute;inset:0;z-index:-1;width:100%;height:100%;overflow:visible;pointer-events:none}
+.bp g path{fill:none;stroke:var(--gold);stroke-width:24}
+/* Títulos partidos en líneas: el recorte deja aire a tildes y colas (É, g, y). En columna flex los
+   márgenes negativos no se colapsan, así el título mide exactamente lo mismo partido que entero */
+.title.is-split{display:flex;flex-direction:column}
+.tl-mask{padding:.1em 0 .14em;margin:-.1em 0 -.14em}
+/* Subrayado que se desliza entre categorías de la carta */
+.mp-ink{position:absolute;left:12px;right:12px;bottom:-1px;height:2px;border-radius:2px 2px 0 0;background:var(--cream);pointer-events:none}
+.mp-tabs.has-ink .mp-tab::after{display:none}

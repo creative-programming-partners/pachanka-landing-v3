@@ -1,0 +1,14 @@
+/* =========================================================
+   MOVIMIENTO REDUCIDO
+   ========================================================= */
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .js .rv,.js .hero-slides,.js .mask>span,.js .loader .logo--anim img,.js .hero-meta,.js .hero-lede,.js .hero-pills,.js .hero-bar,.drawer li{opacity:1!important;transform:none!important}
+  .js .split-media::after{transform:scaleX(0)!important}
+  .js .loader{display:none}
+  .js .rating .stars-fg{clip-path:none}
+  .mp-body.enter .mp-item{opacity:1;transform:none}
+  .vreel-track.is-running{animation:none}
+  .vreel-wrap{overflow-x:auto;padding-bottom:12px}
+  .vbox-media,.vbox-info{transform:none!important;opacity:1!important}
+}

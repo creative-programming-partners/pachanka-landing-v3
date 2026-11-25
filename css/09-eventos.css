@@ -1,0 +1,21 @@
+/* =========================================================
+   EVENTOS — cuadrícula de tarjetas de la referencia
+   ========================================================= */
+.events{background:var(--bg) url("../assets/img/grain.png");padding:clamp(96px,11vw,144px) 0 clamp(96px,12vw,160px)}
+.events-head{max-width:680px;margin:0 auto;padding:0 24px;text-align:center;display:flex;flex-direction:column;align-items:center}
+.events-head .brush{align-self:center}
+.events-head .title{margin-bottom:24px}
+.events-head p{margin:0 0 12px;font-size:15px;line-height:1.7;color:var(--muted)}
+.events-head .strong{font-weight:500;color:var(--cream)}
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(16px,1.6vw,24px);max-width:var(--wrap);margin:clamp(48px,6vw,80px) auto 0;padding:0 var(--side);box-sizing:content-box}
+.ev-card{margin:0;display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden;transition:border-color .16s var(--ease-out)}
+.gimg{aspect-ratio:4/4.4;overflow:hidden;background:var(--elev)}
+.gimg img{width:100%;height:100%;object-fit:cover}
+@media (hover:hover) and (pointer:fine){
+  .ev-card:hover{border-color:var(--line-2)}
+}
+.ev-body{padding:20px 20px 24px}
+.ev-body h3{margin:0 0 4px;font-family:var(--f-serif);font-variation-settings:"SOFT" 50;font-size:20px;font-weight:500;line-height:1.2;color:var(--cream)}
+.ev-sub{margin:0 0 12px;font-size:13px;font-weight:500;line-height:1.45;color:var(--muted)}
+.ev-body p:last-child{margin:0;font-size:14px;line-height:1.6;color:var(--muted)}
+.events-cta{text-align:center;margin-top:clamp(40px,5vw,64px)}

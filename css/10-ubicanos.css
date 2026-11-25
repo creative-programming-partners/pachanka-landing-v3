@@ -1,0 +1,13 @@
+/* =========================================================
+   UBÍCANOS
+   ========================================================= */
+.split--map .split-media{width:100%;max-width:none;aspect-ratio:auto;height:min(68svh,560px);border-radius:20px}
+.map{background:var(--card)}
+/* Mapa en tono carbón para que no rompa la paleta */
+.map iframe{position:absolute;inset:0;width:100%;height:100%;border:0;filter:grayscale(1) invert(.92) sepia(.4) hue-rotate(-12deg) contrast(.88) brightness(.82)}
+.addr{margin:0 0 4px;font-size:16px;color:var(--cream)}
+.addr--muted{color:var(--muted)}
+.hours{margin-top:40px}
+.hours dl{margin:0}
+.hours dt{font-size:15px;font-weight:500;margin-top:12px;color:var(--cream)}
+.hours dd{margin:2px 0 0;font-size:15px;color:var(--muted)}

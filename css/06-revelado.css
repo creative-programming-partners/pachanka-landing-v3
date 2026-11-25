@@ -1,0 +1,5 @@
+/* =========================================================
+   REVELADO AL HACER SCROLL
+   ========================================================= */
+.js .rv{opacity:0;transform:translate3d(0,12px,0);transition:opacity .5s var(--ease-out), transform .5s var(--ease-out);transition-delay:calc(min(var(--i,0),6) * 50ms)}
+.js .rv.is-in{opacity:1;transform:none}

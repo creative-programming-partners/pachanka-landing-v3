@@ -1,0 +1,31 @@
+/* =========================================================
+   CABECERA
+   ========================================================= */
+.hdr{position:fixed;top:0;left:0;right:0;z-index:100;height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:0 clamp(16px,2.6vw,40px);border-bottom:1px solid transparent;transition:background-color .35s ease, border-color .35s ease}
+/* Sin backdrop-filter: con la cabecera fija, el desenfoque se rehacía en cada cuadro de scroll de toda la página */
+.hdr.is-solid{background:rgba(var(--shade-rgb),.94);border-bottom-color:var(--line)}
+.hdr-left{display:flex;align-items:center;gap:20px}
+.burger{width:44px;height:44px;display:flex;flex-direction:column;justify-content:center;gap:6px}
+.burger span{display:block;width:26px;height:2px;background:var(--cream);border-radius:2px;transition:transform .25s var(--ease-out)}
+.burger:hover span:nth-child(2){transform:translateX(4px)}
+/* Navegación de la referencia: enlaces centrados con subrayado naranja en el activo */
+.hdr-nav{position:absolute;left:50%;transform:translateX(-50%);display:flex;gap:clamp(16px,1.9vw,32px)}
+.hdr-nav a{position:relative;padding:8px 0;font-size:14px;font-weight:500;color:var(--muted);transition:color .16s var(--ease-out)}
+.hdr-nav a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;border-radius:2px;background:var(--cream);transform:scaleX(0);transition:transform .3s var(--ease-out)}
+.hdr-nav a:hover{color:var(--cream)}
+.hdr-nav a.is-current{color:var(--cream)}
+.hdr-nav a.is-current::after{transform:scaleX(1)}
+
+.overlay{position:fixed;inset:0;z-index:140;background:rgba(8,6,6,.7);opacity:0;pointer-events:none;transition:opacity .3s var(--ease-out)}
+.overlay.open{opacity:1;pointer-events:auto}
+.drawer{position:fixed;top:0;right:0;bottom:0;z-index:150;width:min(440px,88vw);background:var(--card) url("../assets/img/grain.png");color:var(--cream);padding:96px clamp(24px,4vw,48px) 40px;transform:translate3d(100%,0,0);transition:transform .5s var(--ease-out);will-change:transform;border-left:1px solid var(--line)}
+.drawer.open{transform:none}
+.drawer-close{position:absolute;top:16px;right:24px;width:48px;height:48px;font-size:38px;line-height:1;color:var(--cream);font-weight:300}
+.drawer ul{list-style:none;margin:0;padding:0;text-align:right}
+.drawer li{margin:0 0 24px}
+.drawer a{font-size:17px;color:var(--cream);transition:color .16s var(--ease-out)}
+.drawer a:hover{color:var(--muted)}
+.drawer .drawer-cta{color:var(--gold-ink);font-weight:500}
+.drawer-sep{height:1px;background:var(--line);margin:24px 0!important}
+.drawer li{opacity:0;transform:translate3d(12px,0,0)}
+.drawer.open li{opacity:1;transform:none;transition:opacity .4s var(--ease-out), transform .4s var(--ease-out);transition-delay:calc(var(--i,0) * 40ms + 100ms)}

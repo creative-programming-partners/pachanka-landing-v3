@@ -1,0 +1,22 @@
+/* =========================================================
+   FORMULARIO DE RESERVA
+   ========================================================= */
+.rsv{margin-top:8px}
+.rsv-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px 24px}
+.fld{display:flex;flex-direction:column;gap:4px;font-size:13px;font-weight:500;color:var(--muted)}
+.fld--full{grid-column:1 / -1}
+.fld input,.fld select,.fld textarea{width:100%;padding:8px 0 9px;border:0;border-bottom:1.5px solid var(--line-2);border-radius:0;background:transparent;color:var(--cream);font:inherit;font-size:16px;font-weight:500;letter-spacing:0;text-transform:none;-webkit-appearance:none;appearance:none;transition:border-color .16s var(--ease-out), box-shadow .16s var(--ease-out)}
+.fld select{padding-right:24px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%23E4DBC6' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") right 2px center/12px 8px no-repeat;cursor:pointer}
+.fld select option{background:var(--card);color:var(--cream)}
+.fld input[type="date"]{min-height:42px}
+.fld textarea{min-height:44px;resize:vertical;line-height:1.5}
+.fld textarea::placeholder{color:var(--muted);opacity:.75}
+.fld input:focus,.fld select:focus,.fld textarea:focus{outline:none;border-color:var(--gold-ink);box-shadow:0 1.5px 0 var(--gold-ink)}
+.fld [aria-invalid="true"]{border-color:var(--coral);box-shadow:0 1.5px 0 var(--coral)}
+.rsv-error{margin:16px 0 0;font-size:14px;font-weight:500;color:var(--coral)}
+.rsv-submit{margin-top:24px}
+.rsv-ok{margin:16px 0 0;font-size:14px;font-weight:500;color:var(--sage)}
+
+/* Hoy en el horario: la fila en crema y la palabra "Hoy" en dorado, sin pastilla */
+.hrow.is-today dd{color:var(--cream)}
+.hrow.is-today dt::after{content:attr(data-today);margin-left:8px;font-size:13px;font-weight:500;color:var(--gold-ink)}

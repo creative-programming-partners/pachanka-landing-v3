@@ -1,0 +1,12 @@
+/* =========================================================
+   PANTALLA DE CARGA
+   ========================================================= */
+.loader{position:fixed;inset:0;z-index:300;background:var(--bg) url("../assets/img/grain.png");display:none;flex-direction:column;align-items:center;justify-content:center;gap:40px;transition:transform .8s var(--ease-out);will-change:transform}
+.js .loader{display:flex}
+.loader .logo{width:min(66vw,460px)}
+.js .loader .logo--anim img{opacity:0;animation:letraIn .7s cubic-bezier(.34,1.4,.64,1) forwards;animation-delay:calc(var(--i) * 50ms + 100ms)}
+@keyframes letraIn{from{opacity:0;transform:translate3d(0,45%,0) rotate(calc(var(--r) * 3))}to{opacity:1;transform:none}}
+.loader-bar{position:relative;width:140px;height:2px;background:var(--line);overflow:hidden}
+.loader-bar i{position:absolute;inset:0;background:var(--gold);transform:scaleX(0);transform-origin:left;animation:load 1.1s var(--ease-out) forwards .15s}
+@keyframes load{to{transform:scaleX(1)}}
+.loader.done{transform:translate3d(0,-100%,0)}

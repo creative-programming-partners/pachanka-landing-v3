@@ -1,0 +1,28 @@
+/* =========================================================
+   PIE
+   ========================================================= */
+.ftr{background:#0b0909 url("../assets/img/grain.png");color:var(--cream);padding:clamp(64px,7vw,96px) var(--side) 32px;border-top:1px solid var(--line)}
+.ftr-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr auto;gap:40px;max-width:var(--wrap);margin:0 auto;align-items:start}
+.ftr h4{margin:0 0 16px;font-family:var(--f-serif);font-variation-settings:"SOFT" 50;font-size:20px;font-weight:500;color:var(--cream)}
+.ftr-col a{display:block;font-size:14px;line-height:2.2;color:var(--muted);transition:color .16s var(--ease-out)}
+.ftr-col a:hover{color:var(--cream)}
+.ftr-social{display:flex;flex-direction:column;align-items:flex-start;gap:16px}
+.social{display:flex;gap:8px}
+.social a{width:36px;height:36px;border-radius:50%;border:1px solid var(--line-2);display:grid;place-items:center;line-height:0;transition:background-color .16s var(--ease-out), border-color .16s var(--ease-out)}
+.social a:hover{background:var(--hover);border-color:rgba(var(--text-rgb),.4)}
+.social svg{width:16px;height:16px;fill:var(--cream)}
+.ftr-social .social a{display:grid;place-items:center;line-height:0;font-size:0;letter-spacing:0}
+.ftr-social .pill--line{display:inline-flex;align-items:center;justify-content:center;line-height:1;font-size:13px;color:var(--cream);border-color:var(--line-2)}
+.social .s-fb svg{width:17px;height:17px}
+.social .s-ig svg{width:16.5px;height:16.5px}
+.social .s-tt svg{width:14px;height:14px}
+.social .s-wa svg{width:14.5px;height:14.5px}
+.ftr-bottom{margin:clamp(48px,6vw,72px) 0 0;padding-top:24px;border-top:1px solid var(--line);text-align:center;font-size:13px;line-height:1.8;color:var(--muted)}
+
+/* Volver arriba */
+/* Botón discreto: superficie elevada con línea fina, para no competir con el dorado del botón de reservar */
+.to-top{position:fixed;right:clamp(16px,2.4vw,32px);bottom:clamp(16px,2.4vw,32px);z-index:90;width:48px;height:48px;border-radius:50%;background:var(--elev);border:1px solid var(--line-2);display:grid;place-items:center;opacity:0;transform:translate3d(0,8px,0);pointer-events:none;box-shadow:var(--float-shadow);transition:opacity .3s var(--ease-out), transform .3s var(--ease-out), background-color .16s var(--ease-out);will-change:transform}
+.to-top svg{width:18px;height:18px;stroke:var(--cream);stroke-width:1.5}
+.to-top.show{opacity:1;transform:none;pointer-events:auto}
+.to-top:hover{background:var(--elev-2)}
+.to-top.show:active{transform:scale(.97);transition-duration:.12s}
