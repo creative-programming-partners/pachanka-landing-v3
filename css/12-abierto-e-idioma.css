@@ -18,3 +18,7 @@
 .lang button{font-size:12px;font-weight:500;letter-spacing:.04em;color:inherit;padding:6px 8px;border-radius:999px;opacity:.62;transition:background-color .16s var(--ease-out), color .16s var(--ease-out), opacity .16s var(--ease-out)}
 .lang button:hover{opacity:1}
 html[lang="es"] .lang [data-l="es"],html[lang="en"] .lang [data-l="en"],html[lang="fr"] .lang [data-l="fr"]{background:var(--cream);color:var(--bg);opacity:1}
+
+/* En el menú del celular, los botones ES · EN · FR miden 44 px para tocarlos con el dedo */
+.drawer-lang .lang{height:auto}
+.drawer-lang .lang button{min-width:44px;min-height:44px}

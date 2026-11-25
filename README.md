@@ -1,12 +1,12 @@
 # Pachanka Restaurant — Landing page (edición nocturna)
 
-Propuesta de diseño web para **Pachanka Restaurant**, cocina criolla con fusión en Jesús María, Lima.
+Sitio web de **Pachanka Restaurant**, cocina criolla con fusión en Jesús María, Lima.
 
 **Ver en vivo:** https://pachankarestaurant.com
 
 **Carta digital:** https://carta.pachankarestaurant.com
 
-> Maqueta de presentación para el cliente. La carta y los precios son los de su carta vigente
+> La carta y los precios son los de su carta vigente
 > (*CARTA PACHANKA ACTUALIZADA*). Las fotos de los platos son del archivo del restaurante;
 > las del local y las celebraciones vienen de sus canales públicos.
 

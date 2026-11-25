@@ -184,7 +184,6 @@ PK_TEXTOS.en = {
     'ftr.about': 'About Pachanka',
     'ftr.more': 'More information',
     'ftr.delivery': 'Delivery on PedidosYa',
-    'ftr.proposal': 'Web design proposal · Mockup',
     'ftr.top': 'Back to top'
   },
 

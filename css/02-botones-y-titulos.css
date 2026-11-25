@@ -32,3 +32,7 @@
 .title{margin:0 0 24px;font-family:var(--f-serif);font-variation-settings:"SOFT" 50;font-size:clamp(36px,3.8vw,58px);font-weight:500;line-height:1.06;letter-spacing:-.015em;color:var(--cream);text-wrap:balance}
 .kicker{margin:0 0 12px;font-size:15px;font-weight:500;color:var(--cream)}
 .lede{margin:0 0 24px;font-size:16px;line-height:1.65;color:var(--muted)}
+
+/* Área táctil de 44 px aunque el círculo se vea más chico (en celular mide 40 px) */
+.round{position:relative}
+.round::after{content:"";position:absolute;left:50%;top:50%;width:44px;height:44px;transform:translate(-50%,-50%)}

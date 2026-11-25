@@ -31,4 +31,4 @@ echo.
 echo   Cierra esta ventana cuando termines.
 echo.
 start "" "http://127.0.0.1:%PORT%/"
-%PY% -m http.server %PORT% --bind 127.0.0.1
+%PY% servidor-local.py %PORT%

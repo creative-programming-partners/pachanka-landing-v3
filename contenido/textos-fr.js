@@ -187,7 +187,6 @@ PK_TEXTOS.fr = {
     'ftr.about': 'À propos de Pachanka',
     'ftr.more': 'Plus d’informations',
     'ftr.delivery': 'Livraison sur PedidosYa',
-    'ftr.proposal': 'Proposition de site web · Maquette',
     'ftr.top': 'Retour en haut'
   },
 

@@ -5,9 +5,18 @@
   X-Robots-Tag: noindex
 /ver-en-local.cmd
   X-Robots-Tag: noindex
+/servidor-local.py
+  X-Robots-Tag: noindex
 /assets/archivo/*
   X-Robots-Tag: noindex
 
+# Seguridad, para todas las paginas:
+# - Strict-Transport-Security: el navegador entra siempre por https.
+# - X-Frame-Options: ninguna otra web puede mostrar esta dentro de un marco.
+# - Permissions-Policy: la pagina no pide camara, microfono ni ubicacion.
 /*
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
+  Strict-Transport-Security: max-age=31536000
+  X-Frame-Options: SAMEORIGIN
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=()
