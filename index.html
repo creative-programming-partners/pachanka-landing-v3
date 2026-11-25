@@ -13,7 +13,7 @@
 </script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Pachanka Restaurant — Comida criolla y fusión en Jesús María, Lima</title>
-<meta name="description" content="Pachanka: cocina criolla con fusión, platos del mar, especiales de fin de semana y música en vivo en Jesús María, Lima. Reserva tu mesa por WhatsApp.">
+<meta name="description" content="Restaurante criollo y fusión en Jesús María, Lima. Pachanka: platos del mar, especiales de fin de semana y música en vivo. Carta completa y reservas por WhatsApp.">
 <link rel="canonical" href="https://pachankarestaurant.com/">
 
 <!-- Vista previa al compartir (WhatsApp, Facebook, X) -->
@@ -28,6 +28,7 @@
 <meta property="og:image:alt" content="Logo de Pachanka con fotos de sus tragos, alitas y hamburguesa">
 <meta property="og:locale" content="es_PE">
 <meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="fr_FR">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#110f0f">
 <script>
@@ -47,50 +48,76 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
 
-<!-- El nombre del sitio, para que Google lo muestre encima del resultado -->
+<!-- Ficha para los buscadores: quien es el restaurante, donde esta, cuando abre y
+     donde esta su carta. Un solo grafo, para que la web y el local sean la misma entidad.
+     Los buscadores que la leen: Google, Bing (y con el DuckDuckGo y Ecosia), Yandex y los
+     asistentes que se apoyan en ellos. -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "Pachanka Restaurant",
-  "alternateName": ["Pachanka", "Restaurante Pachanka", "Pachanka Restaurante"],
-  "url": "https://pachankarestaurant.com/"
-}
-</script>
-
-<!-- Ficha de restaurante para Google (horario, dirección, carta, reservas) -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Restaurant",
-  "name": "Pachanka Restaurant",
-  "alternateName": ["Pachanka", "Restaurante Pachanka", "Pachanka Restaurante"],
-  "description": "Cocina criolla con fusión, platos del mar y música en vivo en Jesús María, Lima.",
-  "url": "https://pachankarestaurant.com/",
-  "image": "https://pachankarestaurant.com/assets/img/og-image.jpg",
-  "telephone": "+51 971 969 101",
-  "priceRange": "S/ 5 – S/ 55",
-  "servesCuisine": ["Peruana", "Criolla", "Fusión"],
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Jr. Coronel Camilo Carrillo 169",
-    "addressLocality": "Jesús María",
-    "addressRegion": "Lima",
-    "postalCode": "15076",
-    "addressCountry": "PE"
-  },
-  "geo": { "@type": "GeoCoordinates", "latitude": -12.0738088, "longitude": -77.0379397 },
-  "hasMap": "https://maps.google.com/?cid=7583902838810946393",
-  "openingHoursSpecification": [
-    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"], "opens": "12:00", "closes": "23:00" },
-    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "12:00", "closes": "18:00" }
-  ],
-  "acceptsReservations": "https://wa.me/51971969101",
-  "hasMenu": "https://carta.pachankarestaurant.com/",
-  "sameAs": [
-    "https://www.instagram.com/pachanka.restaurant/",
-    "https://www.facebook.com/pachanka.restaurant/",
-    "https://www.tiktok.com/@pachanka.restaura"
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://pachankarestaurant.com/#web",
+      "url": "https://pachankarestaurant.com/",
+      "name": "Pachanka Restaurant",
+      "alternateName": ["Pachanka", "Restaurante Pachanka", "Pachanka Restaurante"],
+      "inLanguage": ["es-PE", "en", "fr"],
+      "publisher": { "@id": "https://pachankarestaurant.com/#restaurante" }
+    },
+    {
+      "@type": "Restaurant",
+      "@id": "https://pachankarestaurant.com/#restaurante",
+      "name": "Pachanka Restaurant",
+      "alternateName": ["Pachanka", "Restaurante Pachanka", "Pachanka Restaurante"],
+      "description": "Restaurante criollo y fusión en Jesús María, Lima: platos del mar, especiales de fin de semana y música en vivo.",
+      "url": "https://pachankarestaurant.com/",
+      "image": [
+        "https://pachankarestaurant.com/assets/img/og-image.jpg",
+        "https://pachankarestaurant.com/assets/img/fachada-equipo.jpg",
+        "https://pachankarestaurant.com/assets/img/mesa-larga.jpg",
+        "https://pachankarestaurant.com/assets/img/ceviche-hero.jpg"
+      ],
+      "telephone": "+51 971 969 101",
+      "priceRange": "S/ 5 – S/ 55",
+      "currenciesAccepted": "PEN",
+      "servesCuisine": ["Peruana", "Criolla", "Fusión"],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Jr. Coronel Camilo Carrillo 169",
+        "addressLocality": "Jesús María",
+        "addressRegion": "Lima",
+        "postalCode": "15076",
+        "addressCountry": "PE"
+      },
+      "geo": { "@type": "GeoCoordinates", "latitude": -12.0738088, "longitude": -77.0379397 },
+      "areaServed": [
+        { "@type": "AdministrativeArea", "name": "Jesús María" },
+        { "@type": "City", "name": "Lima" }
+      ],
+      "hasMap": "https://maps.google.com/?cid=7583902838810946393",
+      "openingHoursSpecification": [
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"], "opens": "12:00", "closes": "23:00" },
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "12:00", "closes": "18:00" }
+      ],
+      "acceptsReservations": "https://wa.me/51971969101",
+      "potentialAction": {
+        "@type": "ReserveAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://wa.me/51971969101",
+          "actionPlatform": ["https://schema.org/DesktopWebPlatform", "https://schema.org/MobileWebPlatform"]
+        },
+        "result": { "@type": "FoodEstablishmentReservation", "name": "Reserva de mesa" }
+      },
+      "hasMenu": "https://carta.pachankarestaurant.com/",
+      "menu": "https://carta.pachankarestaurant.com/",
+      "sameAs": [
+        "https://www.instagram.com/pachanka.restaurant/",
+        "https://www.facebook.com/pachanka.restaurant/",
+        "https://www.tiktok.com/@pachanka.restaura"
+      ]
+    }
   ]
 }
 </script>
