@@ -4,7 +4,7 @@ Mapa de carpetas y archivos de la landing de Pachanka: qué hay en cada lugar, c
 
 ## Cómo está organizado
 
-Es un sitio estático: HTML, CSS y JavaScript que el navegador lee tal cual, sin instalar dependencias ni compilar. GitHub Pages publica la carpeta tal como está en la rama `main`.
+Es un sitio estático: HTML, CSS y JavaScript que el navegador lee tal cual, sin instalar dependencias ni compilar. Cloudflare publica la carpeta tal como está en la rama `main`.
 
 La organización separa **contenido** de **diseño** y de **funcionamiento**:
 
@@ -120,7 +120,19 @@ Cada enlace lleva `?v=...` al final. Al cambiar un archivo de forma importante c
 
 ## Publicación
 
-No hay paso de compilación. GitHub Pages publica la rama `main` desde la carpeta principal; el archivo `.nojekyll` le indica que sirva los archivos tal cual. Cada cambio guardado en `main` aparece en la web en uno o dos minutos.
+No hay paso de compilación. **Cloudflare** publica la rama `main` desde la carpeta principal (proyecto `pachanka`, sin comando de build, carpeta de salida `/`). Cada cambio guardado en `main` aparece en https://pachankarestaurant.com en uno o dos minutos.
+
+Archivos que lee Cloudflare en la raíz:
+
+| Archivo | Para qué |
+| --- | --- |
+| `_redirects` | `/carta`, `/carta/` y `/menu` llevan a la carta digital |
+| `_headers` | `noindex` para la documentación; `nosniff` y política de referencia para todo |
+| `404.html` | la página de dirección equivocada. **Sin ella**, Cloudflare respondería cualquier dirección inventada con la portada y un código 200, y Google lo tomaría como contenido duplicado |
+| `robots.txt` · `sitemap.xml` | para los buscadores |
+| `site.webmanifest` + `favicon.ico`, `icon-192.png`, `icon-512.png`, `apple-touch-icon.png` | el ícono del sitio |
+
+GitHub Pages sigue encendido con las direcciones viejas: un script al inicio del `<head>` manda a quien entre por ahí a la dirección nueva, porque hay códigos QR impresos que apuntan a `github.io`. El archivo `.nojekyll` es para eso.
 
 ## Cómo crece el proyecto
 

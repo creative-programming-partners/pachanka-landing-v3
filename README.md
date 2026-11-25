@@ -2,9 +2,9 @@
 
 Propuesta de diseño web para **Pachanka Restaurant**, cocina criolla con fusión en Jesús María, Lima.
 
-**Ver en vivo:** https://creative-programming-partners.github.io/pachanka-landing-v3/
+**Ver en vivo:** https://pachankarestaurant.com
 
-**Carta digital:** https://creative-programming-partners.github.io/pachanka-carta-digital/
+**Carta digital:** https://carta.pachankarestaurant.com
 
 > Maqueta de presentación para el cliente. La carta y los precios son los de su carta vigente
 > (*CARTA PACHANKA ACTUALIZADA*). Las fotos de los platos son del archivo del restaurante;
@@ -64,7 +64,9 @@ Después entra a http://localhost:8010. También puedes abrir `index.html` con d
 
 ## Publicar
 
-La página se publica sola con GitHub Pages desde la rama `main`: cada cambio que se guarda en `main` aparece en la dirección en vivo en uno o dos minutos. No hay que compilar nada.
+La página se publica sola con Cloudflare desde la rama `main`: cada cambio que se guarda en `main` aparece en la dirección en vivo en uno o dos minutos. No hay que compilar nada.
+
+Las direcciones viejas de `github.io` siguen funcionando y llevan solas a las nuevas, por los códigos QR que ya están impresos.
 
 Tipografías: Fraunces (títulos), Hanken Grotesk (textos) y Chewy (marca), de Google Fonts.
 Librerías desde CDN: GSAP 3.13 (ScrollTrigger, SplitText, DrawSVG, Flip, CustomEase) y Lenis para el scroll suave.

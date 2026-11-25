@@ -17,7 +17,7 @@ window.PK_TEXTOS = window.PK_TEXTOS || {};
 PK_TEXTOS.es = {
   // Mensajes que arma la página: aviso de abierto/cerrado, formulario de reserva y mensaje de WhatsApp
   mensajes: {
-        title: 'Pachanka Restaurant — Criollo · Fusión en Jesús María',
+        title: 'Pachanka Restaurant — Comida criolla y fusión en Jesús María, Lima',
         desc: 'Pachanka: cocina criolla con fusión, platos del mar, especiales de fin de semana y música en vivo en Jesús María, Lima. Reserva tu mesa por WhatsApp.',
         openNow: 'Abierto ahora', until: 'hasta las', closed: 'Cerrado', opensToday: 'abre hoy a las', opensTomorrow: 'abre mañana a las',
         closingSoon: 'Cierra pronto', closesAt: 'cierra a las',
