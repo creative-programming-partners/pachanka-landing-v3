@@ -20,6 +20,7 @@ pachanka-landing-v3/
 ├── index.html                  la página: secciones, textos en español y fotos
 ├── README.md                   presentación y tabla de "dónde se cambia cada cosa"
 ├── COMO-EDITAR.md              guía paso a paso para el cliente
+├── ver-en-local.cmd            en Windows, doble clic para ver la web en la computadora
 ├── contenido/
 │   ├── restaurante.js          WhatsApp de reservas, horario y lista de videos
 │   ├── carta.js                platos, precios y descripciones en es / en / fr

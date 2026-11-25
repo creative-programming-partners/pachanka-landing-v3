@@ -35,8 +35,10 @@ window.PK_RESTAURANTE = {
   videos: [
     { archivo: 'lomo-saltado-1',    plato: 'lomo-saltado' },
     { archivo: 'carapulcra-1',      plato: 'carapulcra-sopa-seca' },
+    { archivo: 'alfredo-1',         plato: 'spaguetti-alfredo' },
     { archivo: 'langostinos-1',     plato: 'langostinos-al-panko' },
     { archivo: 'tacu-mar-tierra-1', plato: 'tacu-tacu-mar-y-tierra' },
+    { archivo: 'milanesa-kids-1',   plato: 'milanesa-kids' },
     { archivo: 'fruto-di-mare-1',   plato: 'fetuccini-fruto-di-mari' },
     { archivo: 'lomo-saltado-2',    plato: 'lomo-saltado' }
   ]

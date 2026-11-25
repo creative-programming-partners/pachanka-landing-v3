@@ -10,7 +10,7 @@
 .vreel-fade--l{left:0;background:linear-gradient(to right,var(--bg-2),transparent)}
 .vreel-fade--r{right:0;background:linear-gradient(to left,var(--bg-2),transparent)}
 .vreel-track{--g:clamp(12px,1.4vw,20px);display:flex;width:max-content;padding:4px 0;will-change:transform}
-.vreel-track.is-running{animation:vreel 40s linear infinite}
+.vreel-track.is-running{animation:vreel 54s linear infinite}
 .vreel-track.is-frozen,.vreel-track.is-paused{animation-play-state:paused}
 @keyframes vreel{to{transform:translate3d(-33.3333%,0,0)}}
 @media (hover:hover) and (pointer:fine){.vreel-wrap:hover .vreel-track{animation-play-state:paused}}

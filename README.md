@@ -51,7 +51,10 @@ docs/            esta documentación técnica y las fichas del diseño
 
 ## Ver en tu computadora
 
-Abre una terminal en esta carpeta y escribe:
+En Windows, haz doble clic en **`ver-en-local.cmd`**: abre el navegador con la web
+y deja el servidor corriendo (cierra la ventana negra para apagarlo).
+
+A mano, abre una terminal en esta carpeta y escribe:
 
 ```
 python -m http.server 8010
