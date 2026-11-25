@@ -132,7 +132,9 @@ Archivos que lee Cloudflare en la raíz:
 | `robots.txt` · `sitemap.xml` | para los buscadores |
 | `site.webmanifest` + `favicon.ico`, `icon-192.png`, `icon-512.png`, `apple-touch-icon.png` | el ícono del sitio |
 
-GitHub Pages sigue encendido con las direcciones viejas: un script al inicio del `<head>` manda a quien entre por ahí a la dirección nueva, porque hay códigos QR impresos que apuntan a `github.io`. El archivo `.nojekyll` es para eso.
+Los códigos QR de las mesas no apuntan a esta dirección, sino al acortador de la casa
+(`qr.cppcstudio.com/pachanka-pagina` y `/pachanka-menu`), que redirige aquí. Si algún día
+cambia el dominio, se cambia ahí y los QR impresos siguen valiendo.
 
 ## Cómo crece el proyecto
 

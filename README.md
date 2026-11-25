@@ -66,7 +66,7 @@ Después entra a http://localhost:8010. También puedes abrir `index.html` con d
 
 La página se publica sola con Cloudflare desde la rama `main`: cada cambio que se guarda en `main` aparece en la dirección en vivo en uno o dos minutos. No hay que compilar nada.
 
-Las direcciones viejas de `github.io` siguen funcionando y llevan solas a las nuevas, por los códigos QR que ya están impresos.
+Los códigos QR de las mesas apuntan al acortador de la casa (`qr.cppcstudio.com/pachanka-pagina`), que redirige aquí: si cambia el dominio, se cambia ahí y los QR impresos siguen valiendo.
 
 Tipografías: Fraunces (títulos), Hanken Grotesk (textos) y Chewy (marca), de Google Fonts.
 Librerías desde CDN: GSAP 3.13 (ScrollTrigger, SplitText, DrawSVG, Flip, CustomEase) y Lenis para el scroll suave.
