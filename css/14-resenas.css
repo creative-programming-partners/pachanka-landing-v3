@@ -38,6 +38,10 @@
 .qnav svg{width:18px;height:18px;fill:none;stroke:var(--cream);stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
 .qnav:hover{background:var(--hover);border-color:rgba(var(--text-rgb),.4)}
 .qnav:active{transform:scale(.97)}
-.qdots{display:flex;gap:8px}
-.qdots button{width:8px;height:8px;border-radius:50%;background:var(--line-2);transition:background-color .16s var(--ease-out)}
-.qdots button[aria-selected="true"]{background:var(--cream)}
+.qnav{position:relative}
+.qnav::after{content:"";position:absolute;left:50%;top:50%;width:44px;height:44px;transform:translate(-50%,-50%)}
+/* Cada punto es un botón de 24 × 44 px para tocarlo fácil; el punto visible lo dibuja ::before */
+.qdots{display:flex;gap:0}
+.qdots button{position:relative;width:24px;height:44px}
+.qdots button::before{content:"";position:absolute;left:8px;top:18px;width:8px;height:8px;border-radius:50%;background:var(--line-2);transition:background-color .16s var(--ease-out)}
+.qdots button[aria-selected="true"]::before{background:var(--cream)}

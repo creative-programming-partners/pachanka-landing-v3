@@ -3,6 +3,7 @@
    ========================================================= */
 .loader{position:fixed;inset:0;z-index:300;background:var(--bg) url("../assets/img/grain.png");display:none;flex-direction:column;align-items:center;justify-content:center;gap:40px;transition:transform .8s var(--ease-out);will-change:transform}
 .js .loader{display:flex}
+.js.sin-intro .loader{display:none}  /* ya la vio en esta visita: ver js/pantalla-de-carga.js */
 .loader .logo{width:min(66vw,460px)}
 .js .loader .logo--anim img{opacity:0;animation:letraIn .7s cubic-bezier(.34,1.4,.64,1) forwards;animation-delay:calc(var(--i) * 50ms + 100ms)}
 @keyframes letraIn{from{opacity:0;transform:translate3d(0,45%,0) rotate(calc(var(--r) * 3))}to{opacity:1;transform:none}}

@@ -10,6 +10,11 @@ import { T, nameOf, descOf } from './idioma.js';
 import { DISHES, nombrePlato } from './catalogo.js';
 import { sincronizarBloqueo } from './paneles.js';
 
+// Las tarjetas de la cinta son chicas: Cloudflare entrega su foto de portada a 480 px
+// de ancho y en el formato más liviano que acepte el navegador. El video grande usa
+// la foto original. (En este computador lo resuelve servidor-local.py.)
+const POSTER_CHICO = 'cdn-cgi/image/width=480,quality=78,format=auto/';
+
 const REEL = window.PK_RESTAURANTE.videos.map(v => ({ f: v.archivo, dish: v.plato }));
 const track = $('#reelTrack'), vbox = $('#vbox'), vboxMedia = $('#vboxMedia'), vboxVideo = $('#vboxVideo');
 // La tarjeta avisa que el video se abre en grande
@@ -49,7 +54,7 @@ export function pintarCinta() {
     const n = esc(nombrePlato(v.dish));
     return `<button class="vcard" type="button" data-i="${i}"${copy ? ' tabindex="-1" aria-hidden="true"' : ''} aria-label="${esc(T().vSee)}: ${n}">
         <span class="vcard-media">
-          <video muted loop playsinline preload="none" poster="assets/video/${v.f}.jpg?v=2" data-src="assets/video/${v.f}.mp4" aria-hidden="true"></video>
+          <video muted loop playsinline preload="none" poster="${POSTER_CHICO}assets/video/${v.f}.jpg?v=2" data-src="assets/video/${v.f}.mp4" aria-hidden="true"></video>
           <span class="vcard-open">${EXPAND}<span>${esc(T().vOpen)}</span></span>
         </span>
         <span class="vcard-name">${n}</span>

@@ -8,3 +8,6 @@ desktop.ini
 Pachanka-v2-design-dna.zip
 _pruebas/
 LEEME.txt
+
+# Capturas de las pruebas automaticas
+.playwright-mcp/

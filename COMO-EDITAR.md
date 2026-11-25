@@ -103,8 +103,9 @@ La forma más simple es reemplazar el archivo por otro con el mismo nombre.
 | Eventos | `show-criollo.jpg`, `brindis.jpg`, `mesa-larga.jpg`, `fachada-equipo.jpg` | vertical, 1080 × 1440 |
 
 - Usa `.jpg` y procura que pese menos de 700 KB; puedes comprimirla en https://squoosh.app.
-- Si subes la foto con otro nombre, cambia ese nombre en `index.html`.
-- El navegador puede seguir mostrando la foto anterior hasta 10 minutos. Recarga con Ctrl+F5.
+- Sube la foto en tamaño grande: la web la achica sola para cada pantalla (Cloudflare la entrega más chica a los celulares).
+- Si subes la foto con otro nombre, en `index.html` el nombre aparece varias veces en la misma línea (en `src` y en `srcset`). Cámbialo en todas; si dejas uno viejo, en algunos celulares se verá la foto anterior. Por eso es más simple usar el mismo nombre.
+- La foto anterior puede seguir viéndose unas horas en los celulares que ya la habían cargado. Si necesitas que cambie enseguida, en `index.html` cambia el `?v=2` de esa foto por `?v=3` en toda su línea.
 
 ## Cambiar los videos de los platos
 
