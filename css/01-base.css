@@ -1,0 +1,87 @@
+/* =========================================================
+   CÓMO ESTÁ ORGANIZADO EL DISEÑO
+   Un archivo por sección de la página, numerados en el orden en que se
+   cargan (index.html los enlaza en ese orden; el orden importa: si dos reglas
+   chocan, gana la del archivo con número mayor).
+   - Colores y tipografías de la noche: aquí abajo, en :root
+   - Colores del día (tema claro): 20-tema-claro.css
+   - Ajustes para celular y tablet: 18-celular-y-tablet.css
+   Más ayuda: COMO-EDITAR.md, en la carpeta principal.
+   ========================================================= */
+
+/* =========================================================
+   PACHANKA — edición nocturna (Design DNA)
+   Estética tomada de la referencia (design-dna/referencia.json):
+   salón oscuro, titulares serif dorados, fotos cálidas en marcos
+   de arco y portada en carrusel.
+   Identidad de Pachanka (design-dna/pachanka.json): su logo de
+   colores, la pincelada con Chewy de su carta y las ocho letras
+   del logo como acentos.
+   ========================================================= */
+:root{
+  color-scheme:dark;
+
+  /* Referencia — colores medidos en la captura */
+  --bg:#110f0f;        /* fondo de página */
+  --bg-2:#161312;      /* secciones alternas */
+  --brown:#342419;     /* penumbra */
+  --bronze:#83643e;    /* anillos finos y separadores */
+  --cream:#e4dbc6;     /* texto principal */
+  --muted:#a29787;     /* texto secundario */
+  --gold:#dfa159;      /* el único acento: pincelada, precios, botón principal y estrellas */
+  --gold-2:#ebb877;    /* hover del dorado */
+
+  /* Pachanka */
+  --card:#1E1A17;      /* carbón de su carta de piqueos */
+  --elev:#2A2420;
+  --mustard:#F2C94C;
+  /* Letras del logo */
+  --ochre:#D4A25F; --sage:#8BAE98; --blush:#E6B3A2; --coral:#E0766B;
+  --butter:#EDC77F; --teal:#5B8793; --brick:#B05E5A; --sand:#C6A882;
+  /* Las mismas letras en el tono que se lee sobre el carbón (el HTML las usa para texto y puntos) */
+  --ochre-d:#D4A25F; --sage-d:#8BAE98; --coral-d:#E0766B; --teal-d:#7FA9B4; --brick-d:#D08580;
+
+  /* Tema: oscuro por defecto; de día html[data-theme="light"] cambia estos valores (ver TEMA CLARO) */
+  --text-rgb:228,219,198;          /* texto principal en rgb, para transparencias */
+  --line:rgba(var(--text-rgb),.1);     /* líneas finas */
+  --line-2:rgba(var(--text-rgb),.22);  /* borde de controles */
+  --hover:rgba(var(--text-rgb),.06);   /* fondo de controles al pasar el mouse */
+  --on-gold:#1a1410;               /* texto sobre el dorado: siempre oscuro */
+  --gold-ink:var(--gold);          /* dorado usado como texto o línea fina */
+  --shade-rgb:17,15,15;            /* color con que la portada funde la foto */
+  --elev-2:#342d28;
+  --photo-shadow:0 40px 80px rgba(0,0,0,.4);
+  --float-shadow:0 8px 24px rgba(0,0,0,.35);
+  --muted-d:var(--muted);
+
+  --f-serif:'Fraunces',Georgia,'Times New Roman',serif;
+  --f-sans:'Hanken Grotesk','Helvetica Neue',Arial,sans-serif;
+  --f-mark:'Chewy','Comic Sans MS',system-ui,sans-serif;
+
+  /* Una sola curva para todo el movimiento de la página */
+  --ease-out:cubic-bezier(.22,1,.36,1);
+  --side:clamp(20px,6vw,86px);
+  --wrap:1240px;
+  /* Marco en arco de la referencia */
+  --arch:50% 50% 22px 22px / 36% 36% 22px 22px;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;background:var(--bg)}
+html.lenis,html.lenis body{height:auto}
+.lenis.lenis-smooth{scroll-behavior:auto!important}
+.lenis.lenis-scrolling iframe{pointer-events:none}
+body{margin:0;background:var(--bg);color:var(--cream);font-family:var(--f-sans);font-size:16px;line-height:1.6;font-weight:400;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;padding:0}
+::selection{background:var(--gold);color:var(--on-gold)}
+:focus-visible{outline:2px solid var(--gold-ink);outline-offset:3px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* Logotipo (el archivo del restaurante) */
+.logo{display:block;width:100%;height:auto;user-select:none}
+.logo--anim{position:relative;aspect-ratio:740/221}
+.logo--anim img{position:absolute;left:var(--l);top:var(--t);width:var(--w);height:auto}
+.hdr-logo{display:block;width:clamp(108px,10vw,132px)}
+.ftr-logo{display:block;width:clamp(210px,24vw,300px)}

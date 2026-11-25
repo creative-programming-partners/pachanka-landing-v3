@@ -1,0 +1,62 @@
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+@media (min-width:1180px){
+  .burger{display:none}
+}
+@media (max-width:1179px){
+  .hdr-nav{display:none}
+}
+/* El estado de apertura vive en la barra de la portada; en la cabecera solo en tableta, sin la navegación */
+@media (min-width:1180px),(max-width:1060px){
+  .hdr .status{display:none}
+}
+@media (max-width:900px){
+  .hero-slides{width:100%}
+  .hero-shade{background:
+    linear-gradient(to top, rgba(var(--shade-rgb),.97) 0%, rgba(var(--shade-rgb),.86) 38%, rgba(var(--shade-rgb),.35) 64%, rgba(var(--shade-rgb),.55) 100%)}
+  .hero-inner{justify-content:flex-end;padding:96px var(--side) 128px}
+  .hero-copy{max-width:none}
+  .hero-meta{color:var(--cream)}
+  .hero-lede{max-width:40ch}
+  .hero-pills{margin-top:24px}
+  .hero-bar{gap:12px;padding:8px;border-radius:999px}
+  .hb-sep,.hb-text{display:none}
+  .hb-main{flex:1}
+  .round{width:40px;height:40px}
+
+  .split,.split--map{grid-template-columns:1fr;gap:56px}
+  .split--rev .split-media{order:0}
+  .split-media{width:min(100%,440px)}
+  .split--map .split-media{height:52svh}
+  #reservas .split-media{order:-1}
+  .gallery{grid-template-columns:repeat(2,1fr)}
+  .ftr-grid{grid-template-columns:1fr 1fr}
+  .ftr-logo{grid-column:1 / -1}
+  .day--static .day-texts{grid-template-columns:1fr}
+  .reviews-grid{grid-template-columns:1fr}
+}
+@media (max-width:560px){
+  .hdr .lang{display:none}
+  .hdr .pill--hdr{height:36px;padding:0 16px;font-size:13px}
+  .hdr-left{gap:12px}
+  .hdr-logo{width:96px}
+  .menu-panel{width:100vw}
+  .hero-pills .pill{flex:1 1 auto}
+  .hb-script{font-size:18px}
+  .hb-count{display:none}
+  .gallery{grid-template-columns:1fr}
+  .gimg{aspect-ratio:16/11}
+  .ftr-grid{grid-template-columns:1fr}
+  .rsv-grid{grid-template-columns:1fr}
+  .vcard{width:clamp(152px,44vw,200px)}
+  .vbox-desc{display:none}
+}
+@media (max-width:860px){
+  .vbox-card{grid-template-columns:1fr;align-content:center;gap:16px;overflow-y:auto}
+  .vbox-media{justify-self:center;max-width:none;width:auto;height:min(54vh,430px)}
+  .vbox-info{text-align:center}
+  .vbox-desc{margin-inline:auto}
+  .vbox-nav{justify-content:center}
+  .vbox-x{top:8px;right:8px;position:fixed}
+}

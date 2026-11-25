@@ -1,3 +1,13 @@
+/* =========================================================
+   FUNCIONAMIENTO DE LA PÁGINA
+   No hace falta editar este archivo para cambiar textos, precios, horario,
+   WhatsApp o videos: todo eso está en la carpeta contenido/.
+   Secciones de este archivo (busca el título entre ---------- ):
+     Revelado y scroll suave · Cabecera y menú lateral · Hora de Lima ·
+     Idioma · Abierto ahora / Cerrado · Tema claro u oscuro · Reserva por WhatsApp ·
+     Carta completa · Reseñas · Portada en carrusel · Videos · Cambio de idioma ·
+     Pantalla de carga · Un día en Pachanka · Animaciones de scroll (GSAP)
+   ========================================================= */
 (() => {
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const $ = (s, c = document) => c.querySelector(s);
@@ -142,8 +152,11 @@
     }).formatToParts(new Date()).map(x => [x.type, x.value]));
     return { date: `${p.year}-${p.month}-${p.day}`, wd: DAYS[p.weekday], mins: (+p.hour % 24) * 60 + +p.minute };
   }
-  // Horario confirmado en Google Maps e Instagram: lunes a sábado 12–23 h, domingo 12–18 h
-  const hoursFor = wd => wd === 0 ? [12 * 60, 18 * 60] : [12 * 60, 23 * 60];
+  // Horario de atención: sale de contenido/restaurante.js ([abre, cierra] por día, en 24 h), en minutos del día
+  const DAY_KEYS = ['domingo', 'lunes', 'martes', 'miercoles', 'jueves', 'viernes', 'sabado'];
+  const toMin = t => { const [h, m] = String(t).split(':').map(Number); return h * 60 + (m || 0); };
+  const HOURS = DAY_KEYS.map(k => PK_RESTAURANTE.horario[k].map(toMin));
+  const hoursFor = wd => HOURS[wd];
   const wdOf = dateStr => { const [y, m, d] = dateStr.split('-').map(Number); return new Date(y, m - 1, d).getDay(); };
   const addDays = (dateStr, n) => {
     const [y, m, d] = dateStr.split('-').map(Number);
@@ -272,7 +285,7 @@
     const notes = form.notes.value.trim();
     if (notes) lines.push(`• ${t.msgNotes}: ${notes}`);
     lines.push('', t.msgThanks);
-    const url = 'https://wa.me/51971969101?text=' + encodeURIComponent(lines.join('\n'));
+    const url = 'https://wa.me/' + PK_RESTAURANTE.whatsapp + '?text=' + encodeURIComponent(lines.join('\n'));
     errBox.hidden = true; okBox.hidden = false;
     // Con 'noopener' window.open siempre devuelve null, así que se corta el vínculo a mano
     const w = window.open(url, '_blank');
@@ -421,18 +434,17 @@
   }
 
   /* ---------- Carrusel de videos ---------- */
-  // Cada video es un plato de la carta: el nombre, la descripción y el precio salen de PK_MENU.
+  // Cada video es un plato de la carta: la lista está en contenido/restaurante.js y el nombre,
+  // la descripción y el precio salen de contenido/carta.js.
   let reelGsap = false;   // con GSAP la cinta la mueve JavaScript (ver al final) y no la animación CSS
-  const REEL = [
-    { f: 'lomo-saltado-1',    dish: 'lomo-saltado' },
-    { f: 'carapulcra-1',      dish: 'carapulcra-sopa-seca' },
-    { f: 'langostinos-1',     dish: 'langostinos-al-panko' },
-    { f: 'tacu-mar-tierra-1', dish: 'tacu-tacu-mar-y-tierra' },
-    { f: 'fruto-di-mare-1',   dish: 'fetuccini-fruto-di-mari' },
-    { f: 'lomo-saltado-2',    dish: 'lomo-saltado' }
-  ];
+  const REEL = PK_RESTAURANTE.videos.map(v => ({ f: v.archivo, dish: v.plato }));
   const DISHES = new Map();
   PK_MENU.forEach(c => c.groups.forEach(g => g.items.forEach(d => DISHES.set(d.id, { d, cat: c }))));
+
+  /* ---------- Precios de los paneles de la carta ---------- */
+  // Los precios de "Nuestros clásicos", "Del mar" y "Criollo fusión" se toman de contenido/carta.js
+  // (data-plato="id" en index.html): así un precio se cambia en un solo lugar.
+  $$('[data-plato]').forEach(el => { const e = DISHES.get(el.dataset.plato); if (e) el.textContent = money(e.d.p); });
   const dishName = id => { const e = DISHES.get(id); return e ? nameOf(e.d) : ''; };
 
   const track = $('#reelTrack'), vbox = $('#vbox'), vboxMedia = $('#vboxMedia'), vboxVideo = $('#vboxVideo');

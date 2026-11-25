@@ -1,0 +1,57 @@
+/* =========================================================
+   PORTADA — carrusel a la derecha, texto sobre el carbón
+   ========================================================= */
+.hero{position:relative;height:100svh;min-height:660px;overflow:hidden;background:var(--bg);color:var(--cream)}
+/* Sin mask-image: la máscara obligaba a la GPU a pintar el carrusel en una capa aparte en cada cuadro
+   del zoom lento. El fundido izquierdo lo da ahora el último degradado de .hero-shade, que sobre el
+   fondo carbón da el mismo resultado (del 34 % al 56,44 % del ancho, donde antes iba la máscara) */
+.hero-slides{position:absolute;top:0;bottom:0;right:0;width:66%}
+/* Fundido entre fotos, sin zoom lento ni parallax */
+.hs{position:absolute;inset:0;margin:0;opacity:0;transition:opacity .9s var(--ease-out)}
+.hs.is-on{opacity:1}
+.hs img{width:100%;height:100%;object-fit:cover;object-position:var(--pos,50% 50%)}
+/* Viñeta cálida: el texto siempre lee y la foto se funde con el carbón */
+.hero-shade{position:absolute;inset:0;pointer-events:none;background:
+  linear-gradient(to right, rgba(var(--shade-rgb),.96) 0%, rgba(var(--shade-rgb),.82) 30%, rgba(var(--shade-rgb),.18) 62%, rgba(var(--shade-rgb),.38) 100%),
+  linear-gradient(to top, rgba(var(--shade-rgb),.95) 0%, rgba(var(--shade-rgb),0) 34%),
+  linear-gradient(to bottom, rgba(var(--shade-rgb),.7) 0%, rgba(var(--shade-rgb),0) 22%),
+  linear-gradient(to right, rgb(var(--shade-rgb)) 34%, rgba(var(--shade-rgb),0) 56.44%)}
+/* Fuera de pantalla el punto de "abierto" deja de latir */
+.hero.is-off .status-dot::after{animation-play-state:paused}
+
+.hero-inner{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;padding:112px var(--side) clamp(152px,22vh,200px)}
+.hero-copy{max-width:min(640px,52vw)}
+.hero-meta{margin:0 0 24px;font-size:15px;font-weight:500;color:var(--muted)}
+.hero-title{margin:0;font-family:var(--f-serif);font-variation-settings:"SOFT" 50;font-size:clamp(46px,6vw,92px);font-weight:500;line-height:1.02;letter-spacing:-.025em;color:var(--cream)}
+.hero-title .hl{color:var(--gold-ink)}
+.mask{display:block;overflow:hidden;padding-bottom:.08em;margin-bottom:-.08em}
+.mask > span{display:block}
+.hero-lede{margin:24px 0 0;max-width:46ch;font-size:clamp(16px,1.25vw,18px);line-height:1.6;color:var(--muted)}
+.hero-pills{margin-top:32px}
+
+/* Barra con flechas (carrusel de la referencia). Sin backdrop-filter: el desenfoque se rehacía en cada
+   cuadro porque detrás corren el zoom de la foto y el titileo, y la barra además se mueve con el scroll.
+   Detrás ya está la sombra inferior de la portada (casi negra), así que un fondo más opaco se ve igual */
+.hero-bar{position:absolute;left:var(--side);right:var(--side);bottom:clamp(24px,4.5vh,44px);display:flex;align-items:center;gap:clamp(16px,2vw,24px);
+  padding:12px;border-radius:20px;background:rgba(var(--shade-rgb),.72);border:1px solid var(--line)}
+.hb-main{display:flex;flex-direction:column;gap:2px;min-width:0}
+.hb-script{margin:0;font-family:var(--f-mark);font-size:clamp(19px,1.6vw,23px);line-height:1.1;color:var(--gold-ink);transform:rotate(-2deg);transform-origin:left}
+.hb-status{margin:0;font-size:13px}
+.hb-sep{width:1px;align-self:stretch;margin:4px 0;background:var(--line-2)}
+.hb-text{flex:1;margin:0;max-width:56ch;font-size:14px;line-height:1.5;color:var(--muted)}
+.hb-count{margin-left:auto;font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums;white-space:nowrap}
+.hb-count b{color:var(--cream);font-weight:500}
+
+/* Entrada de la portada tras la carga: un fundido corto con subida de 12 px, en cascada breve */
+.js .hero-slides{opacity:0}
+.ready .hero-slides{opacity:1;transition:opacity .8s var(--ease-out)}
+.js .hero-meta,.js .hero-lede,.js .hero-pills,.js .hero-bar{opacity:0;transform:translate3d(0,12px,0)}
+.ready .hero-meta,.ready .hero-lede,.ready .hero-pills,.ready .hero-bar{opacity:1;transform:none;transition:opacity .5s var(--ease-out), transform .5s var(--ease-out)}
+.ready .hero-meta{transition-delay:.1s}
+.ready .hero-lede{transition-delay:.3s}
+.ready .hero-pills{transition-delay:.36s}
+.ready .hero-bar{transition-delay:.42s}
+.js .mask > span{transform:translate3d(0,108%,0)}
+.ready .mask > span{transform:none;transition:transform .7s var(--ease-out)}
+.ready .mask:nth-child(1) > span{transition-delay:.16s}
+.ready .mask:nth-child(2) > span{transition-delay:.22s}

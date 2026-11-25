@@ -1,0 +1,59 @@
+/* =========================================================
+   UN DÍA EN PACHANKA
+   En escritorio la sección se fija y avanza por 4 momentos del día.
+   ========================================================= */
+.day{position:relative;background:var(--bg-2) url("../assets/img/grain.png");color:var(--cream);--mc:var(--ochre-d)}
+/* Cada hora del día toma una letra del logo */
+.day[data-step="1"]{--mc:var(--coral-d)}
+.day[data-step="2"]{--mc:var(--teal-d)}
+.day[data-step="3"]{--mc:var(--brick-d)}
+.m[data-i="0"]{--mc:var(--ochre-d)} .m[data-i="1"]{--mc:var(--coral-d)} .m[data-i="2"]{--mc:var(--teal-d)} .m[data-i="3"]{--mc:var(--brick-d)}
+.day-pin{height:100svh;min-height:640px;display:grid;grid-template-columns:1fr 1fr;overflow:hidden}
+.day-left{display:flex;flex-direction:column;justify-content:space-between;padding:clamp(96px,14vh,140px) var(--side) clamp(40px,7vh,72px)}
+.day-kicker{margin:0}
+
+/* Reloj: cada dígito es un rodillo que gira al cambiar de momento */
+.clock{display:flex;align-items:flex-start;font-family:var(--f-serif);font-variation-settings:"SOFT" 100;font-size:clamp(96px,11vw,176px);font-weight:300;line-height:1;letter-spacing:-.03em;font-variant-numeric:lining-nums tabular-nums;margin:clamp(16px,3vh,32px) 0 clamp(8px,2vh,24px);color:var(--cream)}
+/* Un solo rodillo con la hora completa en formato de 12 h: al cambiar de momento gira al siguiente */
+.reel{display:inline-block;height:1em;overflow:hidden}
+.reel-in{display:flex;flex-direction:column;transform:translate3d(0,calc(var(--s) * -1em),0);transition:transform .8s var(--ease-out);will-change:transform}
+.reel i{display:block;height:1em;font-style:normal;white-space:nowrap}
+.clock-min{color:var(--mc);transition:color .5s var(--ease-out)}
+.clock-ap{margin-left:.14em;font-family:var(--f-sans);font-size:.16em;font-weight:500;letter-spacing:0;color:var(--muted)}
+
+.day-texts{position:relative;min-height:clamp(170px,24vh,220px);max-width:460px}
+.m{position:absolute;left:0;right:0;top:0;opacity:0;transform:translate3d(0,12px,0);pointer-events:none;transition:opacity .3s var(--ease-out), transform .3s var(--ease-out)}
+.m.is-active{opacity:1;transform:none;pointer-events:auto;transition:opacity .5s var(--ease-out) .16s, transform .5s var(--ease-out) .16s}
+.m-kicker{margin:0 0 8px;font-size:15px;font-weight:500;color:var(--mc)}
+.m-title{margin:0 0 12px;font-family:var(--f-serif);font-variation-settings:"SOFT" 50;font-size:clamp(28px,2.6vw,40px);font-weight:500;line-height:1.08;letter-spacing:-.01em;color:var(--cream)}
+.m-text{margin:0;font-size:16px;line-height:1.65;color:var(--muted)}
+.m-note{display:block;margin-top:8px;font-size:13px;color:var(--muted)}
+.m-img{display:none}
+
+/* Línea de tiempo */
+.day-steps{position:relative;max-width:460px;height:52px}
+.day-track{position:absolute;left:0;right:0;top:6px;height:2px;background:var(--line)}
+.day-bar{position:absolute;inset:0;background:var(--mc);transform:scaleX(0);transform-origin:left;transition:background-color .5s var(--ease-out);will-change:transform}
+.day-dot{position:absolute;top:50%;left:calc(var(--p) * 100%);width:14px;height:14px;margin-top:-7px;border-radius:50%;background:var(--bg-2);border:2px solid var(--line-2);transform:translateX(var(--x)) scale(.78);transition:transform .3s var(--ease-out), background-color .16s var(--ease-out), border-color .16s var(--ease-out)}
+.day-dot.is-reached{background:var(--dc);border-color:var(--dc);transform:translateX(var(--x)) scale(1)}
+.day-step{position:absolute;top:24px;left:calc(var(--p) * 100%);transform:translateX(var(--x));font-size:13px;font-weight:500;color:var(--muted);padding:4px 0;white-space:nowrap;font-variant-numeric:tabular-nums;transition:color .16s var(--ease-out)}
+.day-step.is-reached{color:var(--cream)}
+.day-step:hover{color:var(--cream)}
+.day-step.is-active{color:var(--mc)}
+
+/* Fotos del día en el marco de arco, con el anillo bronce desplazado detrás */
+.day-right{position:relative;display:grid;place-items:center;padding:clamp(88px,12vh,120px) var(--side) clamp(40px,7vh,72px)}
+.frames{position:relative;width:min(32vw,450px);height:min(68vh,600px);overflow:hidden;background:var(--card);border-radius:var(--arch);
+  box-shadow:-22px 22px 0 -1px var(--bg-2), -22px 22px 0 0 var(--bronze), var(--photo-shadow)}
+.fr{position:absolute;inset:0;z-index:var(--z);overflow:hidden;transform:translate3d(0,101%,0);transition:transform .8s var(--ease-out);will-change:transform}
+.fr.is-past{transform:translate3d(0,-24%,0)}
+.fr.is-active{transform:none}
+.fr img{width:100%;height:100%;object-fit:cover}
+
+/* Sin pin (celular, movimiento reducido o sin GSAP): los 4 momentos en lista */
+.day--static .day-pin{height:auto;min-height:0;display:block;padding:clamp(80px,11vw,128px) var(--side)}
+.day--static .day-left{padding:0;display:block}
+.day--static .clock,.day--static .day-steps,.day--static .day-right{display:none}
+.day--static .day-texts{min-height:0;max-width:none;display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(40px,5vw,64px) clamp(24px,3vw,40px);margin-top:32px}
+.day--static .m{position:static;opacity:1;transform:none;pointer-events:auto}
+.day--static .m-img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;margin-top:20px;border-radius:50% 50% 16px 16px / 34% 34% 16px 16px}

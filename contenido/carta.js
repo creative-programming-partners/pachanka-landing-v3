@@ -1,10 +1,22 @@
-/* Carta de Pachanka — transcrita de "CARTA PACHANKA ACTUALIZADA" (PDF del restaurante).
-   Un solo archivo de datos para la landing y la carta digital: si cambia un precio,
-   se cambia aquí y las dos webs quedan iguales.
+/* =========================================================
+   CARTA: platos, precios y descripciones en español, inglés y francés
+   ---------------------------------------------------------
+   Transcrita de "CARTA PACHANKA ACTUALIZADA" (PDF del restaurante).
+   De aquí salen los precios de los paneles de la carta, los nombres de los
+   videos y la carta completa. Si cambias un precio aquí, cambia en toda la página.
 
-   Categoría: { id, es, en, fr, groups:[{ es?, en?, fr?, items:[] }] }
-   Plato:     { id, es, en, fr, p (precio en soles), des (descripción ES), den (EN), dfr (FR) }
-   La foto de cada plato se busca en assets/platos/<id>.jpg (si no existe, se ve el marcador). */
+   Cada plato:  { id, es, en, fr, p, des, den, dfr }
+     id   nombre interno del plato (no lo cambies: lo usan las fotos y los videos)
+     es / en / fr     nombre en español / inglés / francés
+     p    precio en soles, con punto decimal (por ejemplo 39 o 3.5)
+     des / den / dfr  descripción en español / inglés / francés
+                      (vacía '' en bebidas y guarniciones, que van en lista simple)
+   Categoría: { id, es, en, fr, groups:[{ es?, en?, fr?, items:[platos] }] }
+
+   La carta digital (otro repositorio, pachanka-carta-digital) tiene su propia
+   copia de este archivo en js/menu-data.js: si cambias un precio, cámbialo
+   también allá para que las dos webs digan lo mismo.
+   ========================================================= */
 window.PK_MENU = [
   {
     id: 'entradas', es: 'Pá empezar', en: 'To start', fr: 'Pour commencer',

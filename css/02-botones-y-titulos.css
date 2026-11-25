@@ -1,0 +1,34 @@
+/* =========================================================
+   BOTONES
+   ========================================================= */
+.pill{display:inline-flex;align-items:center;justify-content:center;height:48px;padding:0 24px;border-radius:999px;background:transparent;color:var(--cream);border:1px solid var(--line-2);font-size:15px;font-weight:500;white-space:nowrap;transition:background-color .16s var(--ease-out), color .16s var(--ease-out), border-color .16s var(--ease-out), transform .16s var(--ease-out)}
+.pill:hover{background:var(--hover);border-color:rgba(var(--text-rgb),.4)}
+.pill:active{transform:scale(.97)}
+/* Principal: dorado liso con texto carbón (8.6:1) y un brillo fino arriba, sin sombra de color */
+.pill--accent{background:var(--gold);color:var(--on-gold);border-color:var(--gold);box-shadow:inset 0 1px 0 rgba(255,255,255,.22)}
+.pill--accent:hover{background:var(--gold-2);border-color:var(--gold-2);color:var(--on-gold)}
+/* Secundario: el mismo botón de borde fino */
+.pill--ghost{color:var(--cream)}
+/* Cabecera: texto dorado sobre borde fino; se llena al pasar el mouse */
+.pill--hdr{height:40px;padding:0 20px;font-size:14px;color:var(--gold-ink)}
+.pill--hdr:hover{background:var(--gold);border-color:var(--gold);color:var(--on-gold)}
+.pill--line{font-size:13px;height:36px;padding:0 16px}
+
+/* Flecha en círculo (carrusel de la referencia) */
+.round{width:44px;height:44px;flex:0 0 auto;border-radius:50%;border:1px solid var(--line-2);display:grid;place-items:center;
+  transition:background-color .16s var(--ease-out),border-color .16s var(--ease-out),transform .16s var(--ease-out)}
+.round svg{width:18px;height:18px;fill:none;stroke:var(--cream);stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.round:hover{background:var(--hover);border-color:rgba(var(--text-rgb),.4)}
+.round:active{transform:scale(.97)}
+
+/* Etiqueta en pincelada (de la carta de Pachanka), ahora en el dorado de la referencia */
+.brush{display:inline-block;align-self:flex-start;margin:0 0 20px;padding:7px 24px 9px;font-family:var(--f-mark);font-size:clamp(18px,1.5vw,22px);line-height:1.1;letter-spacing:.02em;color:var(--on-gold);transform:rotate(-1.5deg);
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 60' preserveAspectRatio='none'%3E%3Cpath d='M6 12 C50 5 96 10 150 6 S258 3 293 9 L284 19 L297 27 L287 37 L295 49 C236 55 182 49 120 53 S34 57 8 51 L15 41 L3 31 L13 22 Z' fill='%23DFA159'/%3E%3C/svg%3E") center/100% 100% no-repeat}
+.js .brush.rv{transform:translate3d(0,12px,0) rotate(-1.5deg)}
+.js .brush.rv.is-in{transform:rotate(-1.5deg)}
+.pills{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+
+/* Títulos serif en crema */
+.title{margin:0 0 24px;font-family:var(--f-serif);font-variation-settings:"SOFT" 50;font-size:clamp(36px,3.8vw,58px);font-weight:500;line-height:1.06;letter-spacing:-.015em;color:var(--cream);text-wrap:balance}
+.kicker{margin:0 0 12px;font-size:15px;font-weight:500;color:var(--cream)}
+.lede{margin:0 0 24px;font-size:16px;line-height:1.65;color:var(--muted)}
