@@ -134,8 +134,8 @@ Un color nuevo para texto necesita buen contraste con el fondo. Si no estás seg
 
 La web cambia sola según la hora de Lima: clara de 6 a.m. a 6 p.m. y oscura desde las 6 p.m. Para ver un tema a cualquier hora, agrega esto al final de la dirección:
 
-- https://creative-programming-partners.github.io/pachanka-landing-v3/?tema=claro
-- https://creative-programming-partners.github.io/pachanka-landing-v3/?tema=oscuro
+- https://pachankarestaurant.com/?tema=claro
+- https://pachankarestaurant.com/?tema=oscuro
 
 ## Si algo sale mal
 

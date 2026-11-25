@@ -2,18 +2,27 @@
 <html lang="es">
 <head>
 <meta charset="utf-8">
+<script>
+/* Quien entre por la direccion vieja de GitHub Pages va a la nueva, con su #ancla.
+   Las direcciones viejas siguen vivas: puede haber QR impresos que apuntan ahi. */
+(function () {
+  if (location.hostname === 'creative-programming-partners.github.io') {
+    location.replace('https://pachankarestaurant.com/' + location.search + location.hash);
+  }
+})();
+</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Pachanka Restaurant — Criollo · Fusión en Jesús María</title>
+<title>Pachanka Restaurant — Comida criolla y fusión en Jesús María, Lima</title>
 <meta name="description" content="Pachanka: cocina criolla con fusión, platos del mar, especiales de fin de semana y música en vivo en Jesús María, Lima. Reserva tu mesa por WhatsApp.">
-<link rel="canonical" href="https://creative-programming-partners.github.io/pachanka-landing-v3/">
+<link rel="canonical" href="https://pachankarestaurant.com/">
 
 <!-- Vista previa al compartir (WhatsApp, Facebook, X) -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Pachanka Restaurant">
 <meta property="og:title" content="Pachanka Restaurant — Sabor criollo, alma de fiesta">
 <meta property="og:description" content="Cocina criolla con fusión, platos del mar y música en vivo en Jesús María, Lima. Reserva por WhatsApp.">
-<meta property="og:url" content="https://creative-programming-partners.github.io/pachanka-landing-v3/">
-<meta property="og:image" content="https://creative-programming-partners.github.io/pachanka-landing-v3/assets/img/og-image.jpg">
+<meta property="og:url" content="https://pachankarestaurant.com/">
+<meta property="og:image" content="https://pachankarestaurant.com/assets/img/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Logo de Pachanka con fotos de sus tragos, alitas y hamburguesa">
@@ -33,7 +42,21 @@
   document.querySelector('meta[name="theme-color"]').setAttribute('content', t === 'light' ? '#f5f0e7' : '#110f0f');
 })();
 </script>
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231E1A17'/%3E%3Ctext x='50%25' y='56%25' dominant-baseline='middle' text-anchor='middle' font-family='Georgia' font-size='44' font-weight='700' fill='%23D4A25F'%3EP%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+
+<!-- El nombre del sitio, para que Google lo muestre encima del resultado -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Pachanka Restaurant",
+  "alternateName": ["Pachanka", "Restaurante Pachanka", "Pachanka Restaurante"],
+  "url": "https://pachankarestaurant.com/"
+}
+</script>
 
 <!-- Ficha de restaurante para Google (horario, dirección, carta, reservas) -->
 <script type="application/ld+json">
@@ -41,9 +64,10 @@
   "@context": "https://schema.org",
   "@type": "Restaurant",
   "name": "Pachanka Restaurant",
+  "alternateName": ["Pachanka", "Restaurante Pachanka", "Pachanka Restaurante"],
   "description": "Cocina criolla con fusión, platos del mar y música en vivo en Jesús María, Lima.",
-  "url": "https://creative-programming-partners.github.io/pachanka-landing-v3/",
-  "image": "https://creative-programming-partners.github.io/pachanka-landing-v3/assets/img/og-image.jpg",
+  "url": "https://pachankarestaurant.com/",
+  "image": "https://pachankarestaurant.com/assets/img/og-image.jpg",
   "telephone": "+51 971 969 101",
   "priceRange": "S/ 5 – S/ 55",
   "servesCuisine": ["Peruana", "Criolla", "Fusión"],
@@ -62,7 +86,7 @@
     { "@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "12:00", "closes": "18:00" }
   ],
   "acceptsReservations": "https://wa.me/51971969101",
-  "hasMenu": "https://creative-programming-partners.github.io/pachanka-carta-digital/",
+  "hasMenu": "https://carta.pachankarestaurant.com/",
   "sameAs": [
     "https://www.instagram.com/pachanka.restaurant/",
     "https://www.facebook.com/pachanka.restaurant/",
@@ -158,7 +182,7 @@
     <li class="drawer-sep"></li>
     <li><a href="#un-dia" data-i18n="nav.day">Un día en Pachanka</a></li>
     <li><a href="#carta" data-i18n="nav.menu">Nuestra carta</a></li>
-    <li><a href="https://creative-programming-partners.github.io/pachanka-carta-digital/" data-i18n="nav.fullmenu">Carta completa</a></li>
+    <li><a href="https://carta.pachankarestaurant.com/" data-i18n="nav.fullmenu">Carta completa</a></li>
     <li><a href="#videos" data-i18n="nav.videos">Videos</a></li>
     <li><a href="#resenas" data-i18n="nav.reviews">Reseñas</a></li>
     <li><a href="#reservas" data-i18n="nav.book">Reservas</a></li>
@@ -181,7 +205,7 @@
   <span class="mp-more" id="mpMore" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span>
   <div class="mp-foot">
     <span data-i18n="mp.note">Precios en soles (S/)</span>
-    <a href="https://creative-programming-partners.github.io/pachanka-carta-digital/" target="_blank" rel="noopener" data-i18n="mp.pdf">Abrir la carta digital</a>
+    <a href="https://carta.pachankarestaurant.com/" target="_blank" rel="noopener" data-i18n="mp.pdf">Abrir la carta digital</a>
   </div>
 </aside>
 
@@ -203,7 +227,7 @@
       <p class="hero-lede" data-i18n="hero.lede">Cocina criolla con fusión, platos del mar y música en vivo. La mesa larga, la barra prendida y el wok que no para.</p>
       <div class="pills hero-pills">
         <a class="pill pill--accent" href="#reservar" data-i18n="cta.book">Reserva aquí</a>
-        <a class="pill pill--ghost" href="https://creative-programming-partners.github.io/pachanka-carta-digital/" data-i18n="cta.fullmenu">Ver carta completa</a>
+        <a class="pill pill--ghost" href="https://carta.pachankarestaurant.com/" data-i18n="cta.fullmenu">Ver carta completa</a>
       </div>
     </div>
   </div>
@@ -301,7 +325,7 @@
       </ul>
       <p class="fine rv" data-i18n="c1.fine">Y para empezar: ceviche Pachanka, causa acevichada, leche de tigre y langostinos al panko<br>Precios en soles</p>
       <div class="pills rv">
-        <a class="pill pill--accent" href="https://creative-programming-partners.github.io/pachanka-carta-digital/#cat-clasicos" data-i18n="cta.fullmenu">Ver carta completa</a>
+        <a class="pill pill--accent" href="https://carta.pachankarestaurant.com/#cat-clasicos" data-i18n="cta.fullmenu">Ver carta completa</a>
       </div>
     </div>
   </article>
@@ -323,7 +347,7 @@
         <li class="rv"><b>Fetuccini fruto di mari</b> — <span class="price" data-plato="fetuccini-fruto-di-mari">S/ 34.00</span><small data-i18n="c2.d5">Mariscos en mantequilla y vino blanco, con filete de pescado al grill</small></li>
       </ul>
       <div class="pills rv">
-        <a class="pill" href="https://creative-programming-partners.github.io/pachanka-carta-digital/#cat-mar" data-i18n="cta.allsea">Ver todo lo del mar</a>
+        <a class="pill" href="https://carta.pachankarestaurant.com/#cat-mar" data-i18n="cta.allsea">Ver todo lo del mar</a>
       </div>
     </div>
   </article>
@@ -346,7 +370,7 @@
       </ul>
       <p class="fine rv" data-i18n="c3.fine">Sábados y domingos: chanchito crujiente a la caja china, carapulcra con sopa seca y frejoles con seco de cabrito</p>
       <div class="pills rv">
-        <a class="pill pill--accent" href="https://creative-programming-partners.github.io/pachanka-carta-digital/#cat-fusion" data-i18n="cta.allfusion">Ver todo el criollo fusión</a>
+        <a class="pill pill--accent" href="https://carta.pachankarestaurant.com/#cat-fusion" data-i18n="cta.allfusion">Ver todo el criollo fusión</a>
       </div>
     </div>
   </article>
@@ -645,7 +669,7 @@
     </div>
     <div class="ftr-col">
       <h4 data-i18n="ftr.more">Más información</h4>
-      <a href="https://creative-programming-partners.github.io/pachanka-carta-digital/" data-i18n="nav.fullmenu">Carta completa</a>
+      <a href="https://carta.pachankarestaurant.com/" data-i18n="nav.fullmenu">Carta completa</a>
       <a href="https://www.pedidosya.com.pe/restaurantes/lima/pachanka-menu" target="_blank" rel="noopener" data-i18n="ftr.delivery">Delivery en PedidosYa</a>
       <a href="https://wa.me/51971969101" target="_blank" rel="noopener">WhatsApp 971 969 101</a>
     </div>

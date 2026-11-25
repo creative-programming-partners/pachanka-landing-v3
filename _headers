@@ -1,0 +1,13 @@
+# Que Google no indexe la documentacion ni los archivos de trabajo
+/docs/*
+  X-Robots-Tag: noindex
+/*.md
+  X-Robots-Tag: noindex
+/ver-en-local.cmd
+  X-Robots-Tag: noindex
+/assets/archivo/*
+  X-Robots-Tag: noindex
+
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin

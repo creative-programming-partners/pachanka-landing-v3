@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Esta página no existe — Pachanka Restaurant</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#110f0f">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<!-- Esta página se sirve en cualquier dirección que no exista, así que va sola:
+     los estilos van aquí dentro y los enlaces son absolutos. -->
+<style>
+  :root{
+    --bg:#110f0f; --card:#1E1A17; --cream:#e4dbc6; --muted:#a29787;
+    --gold:#dfa159; --on-gold:#1a1410; --line:rgba(228,219,198,.14);
+  }
+  *,*::before,*::after{box-sizing:border-box}
+  body{margin:0;min-height:100vh;display:grid;place-items:center;padding:32px 20px;
+    background:var(--bg);color:var(--cream);
+    font-family:'Hanken Grotesk','Helvetica Neue',Arial,sans-serif;line-height:1.6;
+    -webkit-font-smoothing:antialiased;text-align:center}
+  main{max-width:560px}
+  .mark{font-family:Georgia,'Times New Roman',serif;font-size:64px;line-height:1;color:var(--gold);margin:0}
+  h1{font-family:Georgia,'Times New Roman',serif;font-size:clamp(28px,6vw,40px);font-weight:600;
+    line-height:1.15;letter-spacing:-.01em;margin:22px 0 0}
+  p{margin:16px auto 0;max-width:42ch;color:var(--muted);font-size:16.5px}
+  .acc{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:30px}
+  a.btn{display:inline-flex;align-items:center;justify-content:center;height:48px;padding:0 26px;
+    border-radius:999px;border:1px solid var(--line);color:var(--cream);text-decoration:none;
+    font-size:15px;font-weight:500}
+  a.btn--gold{background:var(--gold);border-color:var(--gold);color:var(--on-gold);font-weight:600}
+  a.btn:hover{border-color:var(--gold);color:var(--gold)}
+  a.btn--gold:hover{color:var(--on-gold);opacity:.92}
+  .fine{margin-top:34px;font-size:13px;color:rgba(228,219,198,.45)}
+  .fine a{color:inherit}
+</style>
+</head>
+<body>
+<main>
+  <p class="mark" aria-hidden="true">P</p>
+  <h1>Esta página no existe</h1>
+  <p>Puede que el enlace esté mal escrito o que la página haya cambiado de sitio.
+     Desde aquí llegas a todo lo demás.</p>
+  <div class="acc">
+    <a class="btn btn--gold" href="https://pachankarestaurant.com/">Ir a la web</a>
+    <a class="btn" href="https://carta.pachankarestaurant.com/">Ver la carta</a>
+    <a class="btn" href="https://wa.me/51971969101">Reservar por WhatsApp</a>
+  </div>
+  <p class="fine">Pachanka Restaurant · Jr. Coronel Camilo Carrillo 169, Jesús María — Lima</p>
+</main>
+</body>
+</html>
