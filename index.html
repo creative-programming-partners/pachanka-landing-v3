@@ -117,7 +117,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Chewy&family=Fraunces:opsz,wght,SOFT@9..144,300..700,0..100&family=Hanken+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-<script>document.documentElement.classList.add('js');try{if(sessionStorage.getItem('pk-intro'))document.documentElement.classList.add('sin-intro')}catch(e){}if('scrollRestoration' in history)history.scrollRestoration='manual';</script>
+<script>document.documentElement.classList.add('js');try{if(sessionStorage.getItem('pk-intro'))document.documentElement.classList.add('sin-intro')}catch(e){}if('scrollRestoration' in history)history.scrollRestoration='manual';
+/* Respaldo de las fotos: si la versión achicada por Cloudflare (srcset) no llega, se usa la foto original (src) */
+document.addEventListener('error',function(e){var i=e.target;if(i.tagName==='IMG'&&i.hasAttribute('srcset')){i.removeAttribute('srcset');i.removeAttribute('sizes');}},true);</script>
 <!-- Diseño: un archivo por sección, en este orden (el orden importa). Colores: css/01-base.css y css/20-tema-claro.css -->
 <link rel="stylesheet" href="css/01-base.css?v=entrega1">
 <link rel="stylesheet" href="css/02-botones-y-titulos.css?v=entrega1">

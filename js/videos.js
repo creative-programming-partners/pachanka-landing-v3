@@ -12,8 +12,10 @@ import { sincronizarBloqueo } from './paneles.js';
 
 // Las tarjetas de la cinta son chicas: Cloudflare entrega su foto de portada a 480 px
 // de ancho y en el formato más liviano que acepte el navegador. El video grande usa
-// la foto original. (En este computador lo resuelve servidor-local.py.)
-const POSTER_CHICO = 'cdn-cgi/image/width=480,quality=78,format=auto/';
+// la foto original. Solo en el dominio propio (y en este computador, donde lo resuelve
+// servidor-local.py): en otras direcciones, como las vistas previas, va la original.
+const CON_CLOUDFLARE = /(^|\.)pachankarestaurant\.com$/.test(location.hostname) || ['127.0.0.1', 'localhost'].includes(location.hostname);
+const POSTER_CHICO = CON_CLOUDFLARE ? 'cdn-cgi/image/width=480,quality=78,format=auto/' : '';
 
 const REEL = window.PK_RESTAURANTE.videos.map(v => ({ f: v.archivo, dish: v.plato }));
 const track = $('#reelTrack'), vbox = $('#vbox'), vboxMedia = $('#vboxMedia'), vboxVideo = $('#vboxVideo');
