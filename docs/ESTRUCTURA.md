@@ -49,9 +49,28 @@ pachanka-landing-v3/
 │   ├── 19-animaciones-scroll.css
 │   ├── 20-tema-claro.css       colores del día (6 a.m. a 6 p.m., hora de Lima)
 │   └── 21-movimiento-reducido.css
-├── js/
-│   ├── idiomas.js              cambia el español del HTML por el inglés o el francés
-│   └── main.js                 todo el funcionamiento, con un índice de secciones al inicio
+├── js/                         un módulo por sección; main.js los arma
+│   ├── main.js                 ÚNICO punto de entrada: enciende cada parte y las conecta
+│   ├── utiles.js               ayudas comunes (buscar en el DOM, escapar texto, precios)
+│   ├── textos.js               cambia el español del HTML por el inglés o el francés
+│   ├── idioma.js               idioma activo y selector ES · EN · FR
+│   ├── catalogo.js             índice de platos por id y precios de los paneles
+│   ├── hora-lima.js            hora de Lima y horario de atención
+│   ├── revelado.js             lo que entra al hacer scroll (.rv), cortinas y mapa
+│   ├── scroll-suave.js         Lenis y el "ir a" de los enlaces internos
+│   ├── cabecera.js             cabecera, volver arriba y sección a la vista
+│   ├── paneles.js              menú lateral, panel de la carta y capa oscura
+│   ├── enlaces.js              enlaces internos (#seccion)
+│   ├── estado-abierto.js       aviso de "Abierto ahora" o "Cerrado"
+│   ├── tema.js                 claro u oscuro según la hora de Lima
+│   ├── reservas.js             formulario de reserva → WhatsApp
+│   ├── carta-completa.js       panel con las categorías y los platos
+│   ├── resenas.js              carrusel de reseñas de Google
+│   ├── portada.js              carrusel de la portada
+│   ├── videos.js               cinta de videos y video expandido
+│   ├── pantalla-de-carga.js    la pantalla de inicio
+│   ├── un-dia.js               línea del tiempo "Un día en Pachanka"
+│   └── animaciones.js          animaciones ligadas al scroll (GSAP)
 ├── assets/
 │   ├── img/                    fotos que usa la página y piezas del logo (img/logo/)
 │   ├── video/                  videos de platos (.mp4) con su foto de espera (.jpg)
@@ -92,8 +111,8 @@ pachanka-landing-v3/
 1. Los 21 estilos de `css/`, del 01 al 21. Si dos reglas chocan, gana la del archivo con número mayor; por eso `18-celular-y-tablet.css` y `20-tema-claro.css` van al final.
 2. Las librerías externas (GSAP y Lenis, desde CDN).
 3. El contenido: `contenido/restaurante.js`, `carta.js` y `textos-es/en/fr.js`.
-4. `js/idiomas.js`, que lee los textos.
-5. `js/main.js`, que lee todo lo anterior y arma la página.
+4. `js/main.js` como módulo (`<script type="module">`), que importa los demás archivos
+   de `js/` y arma la página. Es el único que se enlaza desde el HTML.
 
 Además, un script corto en el `<head>` de `index.html` elige el tema (claro u oscuro) según la hora de Lima antes de mostrar la página.
 
@@ -107,11 +126,12 @@ No hay paso de compilación. GitHub Pages publica la rama `main` desde la carpet
 
 - **Una sección nueva:** su HTML va en `index.html` en el lugar donde se verá, sus textos con claves `data-i18n` en los tres idiomas y sus estilos en un archivo nuevo de `css/`. Si sus reglas no dependen de otras, puede ir antes de `18-celular-y-tablet.css` con el siguiente número libre, renumerando los de después.
 - **Un plato o un video:** solo contenido, ver COMO-EDITAR.md.
-- **Un idioma nuevo:** requiere un archivo `contenido/textos-xx.js`, un botón en el selector de `index.html` y su registro en `js/idiomas.js` y `js/main.js` (lista `LANGS`). Es trabajo de desarrollo.
+- **Un comportamiento nuevo:** un archivo en `js/` con una función `iniciar…()` que se exporta, y una línea en `js/main.js` que la llama. Si la sección también se ve, su CSS va en un archivo nuevo de `css/` con el mismo nombre.
+- **Un idioma nuevo:** requiere un archivo `contenido/textos-xx.js`, un botón en el selector de `index.html` y su registro en `js/textos.js` y `js/idioma.js` (lista `LANGS`). Es trabajo de desarrollo.
 
 ## Relación con la carta digital
 
-La carta digital (`pachanka-carta-digital`) es otro repositorio con su propia copia de la carta en `js/menu-data.js`. Es el mismo formato que `contenido/carta.js`: cuando cambia un plato o un precio, hay que cambiarlo en los dos.
+La carta digital (`pachanka-carta-digital`) es otro repositorio con su propia copia de la carta en `contenido/carta.js`, el mismo archivo que aquí: cuando cambia un plato o un precio, hay que cambiarlo en los dos. Las dos webs siguen esta misma estructura (`contenido/` + `css/` numerados + `js/` por módulos), para que quien trabaje en una se mueva igual en la otra.
 
 ## Mantenimiento de este documento
 

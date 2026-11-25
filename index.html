@@ -77,27 +77,27 @@
 
 <script>document.documentElement.classList.add('js');if('scrollRestoration' in history)history.scrollRestoration='manual';</script>
 <!-- Diseño: un archivo por sección, en este orden (el orden importa). Colores: css/01-base.css y css/20-tema-claro.css -->
-<link rel="stylesheet" href="css/01-base.css?v=org1">
-<link rel="stylesheet" href="css/02-botones-y-titulos.css?v=org1">
-<link rel="stylesheet" href="css/03-pantalla-de-carga.css?v=org1">
-<link rel="stylesheet" href="css/04-cabecera-y-menu.css?v=org1">
-<link rel="stylesheet" href="css/05-portada.css?v=org1">
-<link rel="stylesheet" href="css/06-revelado.css?v=org1">
-<link rel="stylesheet" href="css/07-un-dia.css?v=org1">
-<link rel="stylesheet" href="css/08-carta-paneles.css?v=org1">
-<link rel="stylesheet" href="css/09-eventos.css?v=org1">
-<link rel="stylesheet" href="css/10-ubicanos.css?v=org1">
-<link rel="stylesheet" href="css/11-pie.css?v=org1">
-<link rel="stylesheet" href="css/12-abierto-e-idioma.css?v=org1">
-<link rel="stylesheet" href="css/13-carta-completa.css?v=org1">
-<link rel="stylesheet" href="css/14-resenas.css?v=org1">
-<link rel="stylesheet" href="css/15-reservas.css?v=org1">
-<link rel="stylesheet" href="css/16-videos.css?v=org1">
-<link rel="stylesheet" href="css/17-avisos-y-casilla.css?v=org1">
-<link rel="stylesheet" href="css/18-celular-y-tablet.css?v=org1">
-<link rel="stylesheet" href="css/19-animaciones-scroll.css?v=org1">
-<link rel="stylesheet" href="css/20-tema-claro.css?v=org1">
-<link rel="stylesheet" href="css/21-movimiento-reducido.css?v=org1">
+<link rel="stylesheet" href="css/01-base.css?v=org2">
+<link rel="stylesheet" href="css/02-botones-y-titulos.css?v=org2">
+<link rel="stylesheet" href="css/03-pantalla-de-carga.css?v=org2">
+<link rel="stylesheet" href="css/04-cabecera-y-menu.css?v=org2">
+<link rel="stylesheet" href="css/05-portada.css?v=org2">
+<link rel="stylesheet" href="css/06-revelado.css?v=org2">
+<link rel="stylesheet" href="css/07-un-dia.css?v=org2">
+<link rel="stylesheet" href="css/08-carta-paneles.css?v=org2">
+<link rel="stylesheet" href="css/09-eventos.css?v=org2">
+<link rel="stylesheet" href="css/10-ubicanos.css?v=org2">
+<link rel="stylesheet" href="css/11-pie.css?v=org2">
+<link rel="stylesheet" href="css/12-abierto-e-idioma.css?v=org2">
+<link rel="stylesheet" href="css/13-carta-completa.css?v=org2">
+<link rel="stylesheet" href="css/14-resenas.css?v=org2">
+<link rel="stylesheet" href="css/15-reservas.css?v=org2">
+<link rel="stylesheet" href="css/16-videos.css?v=org2">
+<link rel="stylesheet" href="css/17-avisos-y-casilla.css?v=org2">
+<link rel="stylesheet" href="css/18-celular-y-tablet.css?v=org2">
+<link rel="stylesheet" href="css/19-animaciones-scroll.css?v=org2">
+<link rel="stylesheet" href="css/20-tema-claro.css?v=org2">
+<link rel="stylesheet" href="css/21-movimiento-reducido.css?v=org2">
 </head>
 <body>
 <!-- =========================================================
@@ -672,13 +672,13 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/CustomEase.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
 <!-- Contenido que se edita: datos del restaurante, carta y textos en inglés y francés (carpeta contenido/) -->
-<script src="contenido/restaurante.js?v=org1"></script>
-<script src="contenido/carta.js?v=org1"></script>
-<script src="contenido/textos-es.js?v=org1"></script>
-<script src="contenido/textos-en.js?v=org1"></script>
-<script src="contenido/textos-fr.js?v=org1"></script>
-<!-- Funcionamiento de la página (no hace falta editarlo) -->
-<script src="js/idiomas.js?v=org1"></script>
-<script src="js/main.js?v=org1"></script>
+<script src="contenido/restaurante.js?v=org2"></script>
+<script src="contenido/carta.js?v=org2"></script>
+<script src="contenido/textos-es.js?v=org2"></script>
+<script src="contenido/textos-en.js?v=org2"></script>
+<script src="contenido/textos-fr.js?v=org2"></script>
+<!-- Funcionamiento de la página (no hace falta editarlo): un modulo por seccion,
+     armados desde js/main.js. Mapa en docs/ESTRUCTURA.md -->
+<script type="module" src="js/main.js?v=org2"></script>
 </body>
 </html>

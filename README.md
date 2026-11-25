@@ -44,7 +44,7 @@ Qué hay en cada carpeta y cómo se relacionan los archivos: **[docs/ESTRUCTURA.
 index.html       la página: textos en español, fotos y secciones
 contenido/       lo que se edita seguido: carta, datos del restaurante y textos en inglés y francés
 css/             el diseño, un archivo por sección (01 a 21, en el orden en que se cargan)
-js/              el funcionamiento (no hace falta tocarlo para cambiar contenido)
+js/              el funcionamiento, un módulo por sección (no hace falta tocarlo para cambiar contenido)
 assets/          fotos, logo y videos
 docs/            esta documentación técnica y las fichas del diseño
 ```

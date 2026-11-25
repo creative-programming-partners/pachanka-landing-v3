@@ -18,7 +18,7 @@ El precio se cambia en un solo archivo y se actualiza en los paneles de la carta
 3. Cambia el número que va después de `p:`. Por ejemplo, de `p: 39,` a `p: 42,`. Si lleva decimales, usa punto: `p: 3.5,`.
 4. Guarda con **Commit changes**.
 
-La carta digital es otra web y tiene su propia copia de la carta. Para que las dos muestren el mismo precio, cambia también el plato en el repositorio `pachanka-carta-digital`, archivo `js/menu-data.js`.
+La carta digital es otra web y tiene su propia copia de la carta. Para que las dos muestren el mismo precio, cambia también el plato en el repositorio `pachanka-carta-digital`, archivo `contenido/carta.js`.
 
 ## Cambiar el nombre o la descripción de un plato
 
